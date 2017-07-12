@@ -1,2 +1,2 @@
 # Blanbok.github.io
->Blanbok博客
+Blanbok博客
