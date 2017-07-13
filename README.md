@@ -1,7 +1,7 @@
 # Blanbok.github.io
 Blanbok博客
 
-[TOC]
+[TOPIC]
 
 # sadas
 
