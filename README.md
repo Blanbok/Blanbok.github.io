@@ -14,6 +14,7 @@
  
 # 1、[关于自己的对标管理](./DetailInformation/BenchmarkingManagement.md)
 > 通过标准的方式进行提升
+
 ![对标管理](./Assets/BenchmarkingManagement.png)
 
 # 2、[三个问题](./DetailInformation/ThreeQuestions.md)
