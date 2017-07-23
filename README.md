@@ -18,6 +18,7 @@
 
 # 2、[三个问题](./DetailInformation/ThreeQuestions.md)
 > 写下每天的问题来思考如何改善我的行为
+
 ![三个问题](./Assets/ThreeQuestions.png)
 
 # 3、[刻意练习](./DetailInformation/DeliberatePractice.md)
