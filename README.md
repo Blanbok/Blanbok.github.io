@@ -9,6 +9,7 @@
     
     I hope I can get the visible growth through the Benchmarking Management of standards
     
+    
     -  Find the target (a good project, a person who wants to reach the level of knowledge and goals)
     
     -  Analysis of standards (useful things such as knowledge, habits, etc.)
