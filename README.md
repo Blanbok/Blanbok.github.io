@@ -30,5 +30,9 @@
 # 4、[Review](./DetailInformation/Review.md)
 >通过Review,总结各个阶段得到的经验，好的总结经验指导下次行动，差的反思原因制定提升策略。
 
-# 5、[技能树](./DetailInformation/Review.md)
+![Review](./Assets/Review.png)
+
+# 5、[技能树](./DetailInformation/SkillTree.md)
 >通过建立自己的技能树，用可见的方式来看到自己的成长。
+
+![技能树](./Assets/SkillTree.png)
