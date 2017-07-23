@@ -10,7 +10,7 @@
   
   最后，之后我将会把这些方法变成完全适用于我个人的方法
  
-   以下是我在搭建博客之前会在github中记录的东西
+  以下记载在github中的东西仅作为博客的雏形
  
 # 1、[关于自己的对标管理](./DetailInformation/BenchmarkingManagement.md)
 > 通过标准的方式进行提升
@@ -26,3 +26,9 @@
 > 人们眼中的天才之所以卓越非凡，并非天资超人一等，而是付出了持续不断的努力。1万小时的锤炼是任何人从平凡变成世界级大师的必要条件。
 
 ![刻意练习](./Assets/DeliberatePractice.png)
+
+# 4、[Review](./DetailInformation/Review.md)
+>通过Review,总结各个阶段得到的经验，好的总结经验指导下次行动，差的反思原因制定提升策略。
+
+# 5、[技能树](./DetailInformation/Review.md)
+>通过建立自己的技能树，用可见的方式来看到自己的成长。
