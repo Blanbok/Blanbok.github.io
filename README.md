@@ -12,11 +12,13 @@
  
    以下是我在搭建博客之前会在github中记录的东西
  
-# 1、[关于自己的对标管理](./BenchmarkingManagement.md)
+# 1、[关于自己的对标管理](./DetailInformation/BenchmarkingManagement.md)
 > 通过标准的方式进行提升
 
-# 2、[三个问题](./ThreeQuestions.md)
+# 2、[三个问题](./DetailInformation/ThreeQuestions.md)
 > 写下每天的问题来思考如何改善我的行为
 
-# 3、[刻意练习](./DeliberatePractice.md)
+# 3、[刻意练习](./DetailInformation/DeliberatePractice.md)
 > 人们眼中的天才之所以卓越非凡，并非天资超人一等，而是付出了持续不断的努力。1万小时的锤炼是任何人从平凡变成世界级大师的必要条件。
+
+![刻意练习](./Assets/BenchmarkingManagement.png)
