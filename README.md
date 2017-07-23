@@ -12,7 +12,7 @@
  
    以下是我在搭建博客之前会在github中记录的东西
  
-# 1、[关于自己的对标管理](https://github.com/Blanbok/AboutMyOwnBenchmarkingManagement/blob/master/README.md)
+# 1、[关于自己的对标管理](./BenchmarkingManagement.md)
     
 > 通过标准的方式进行提升
 -  找到目标(一个好的项目，希望达到的知识水平和目标的人)
