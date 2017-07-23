@@ -1,16 +1,39 @@
 # Blanbok.github.io
 
-> I hope I can use this blog to further improve my skills and remember how I feel in the process of technology improvement so that I can improve myself better
-  These are the things I'm going to record inside github
-  Now my goal is only to make myself technically 30 percent of the country, and to master the way I can succeed.
-  I hope that this way will let me no longer be confused about every day
+  我希望我可以用这个博客来进一步提高我的技能并且记住我在技术进步的过程中我的感受这样我就能更好地改进自己
   
-# 1、[About My Own Benchmarking Management](https://github.com/Blanbok/AboutMyOwnBenchmarkingManagement/blob/master/README.md)
+  这些是我将在github中记录的东西
+  
+  现在我的目标仅仅是让我自己在技术上达到国内前30%，并且掌握能成功的方法。
+  
+  我希望这种方式能让我不会对之后的生活感到迷惑
+  
+  每次一个阶段完结的时候，我将会试图优化这些方法
+  
+  最后，我希望将这些适用性方法应用于我的个人方法
+  
+# 1、[关于自己的对标管理](https://github.com/Blanbok/AboutMyOwnBenchmarkingManagement/blob/master/README.md)
     
-    I hope I can get the visible growth through the Benchmarking Management of standards
-    
--  Find the target (a good project, a person who wants to reach the level of knowledge and goals)
--  Analysis of standards (useful things such as knowledge, habits, etc.)
--  The scale gap (the current gap with the target)
--  Action plan (to achieve the target implementation plan)
--  Next step (the next step can be done directly, setting start time, cycle, deadline)
+> 我希望自己能通过标准的方式进行提升
+-  找到目标(一个好的项目，希望达到的知识水平和目标的人)
+-  对标准的分析(有用的东西，如知识、习惯等)
+-  对标差距(当前与目标的差距)
+-  行动计划(实现目标实施计划)
+-  下一步(下一个步骤可以直接开始，设置开始时间、周期、最后期限)
+
+# 2、三个问题
+> 我想写下每天的问题来思考如何改善我的行为
+
+1. 我昨天完成了什么
+2. 我遇到了哪些问题
+3. 我今天做什么
+
+# 3、刻意练习
+> 人们眼中的天才之所以卓越非凡，并非天资超人一等，而是付出了持续不断的努力。1万小时的锤炼是任何人从平凡变成世界级大师的必要条件。
+
+我们可以把刻意练习简单地理解为四个要素：目标、Focus、Feedback、Fix it。
+
+- 目标，每一次练习，都要有明确的目标，而且这个目标要高于你现在的能力，需要跳一跳才能够得着。个人对标管理法可以帮助你找到练习的目标。
+- Focus，指专注地做事，所谓专注，就是方向明确，聚焦当下，心无旁骛，积极努力。
+- Feedback，指反馈。我们在练习时，需要有高人陪伴，需要找到教练，能够及时给予我们准确的反馈，让我们知道差距。
+- Fix it，指修正，改善。当我们获得了反馈后，要根据反馈来改善自己的做法，这样才能进步。 
