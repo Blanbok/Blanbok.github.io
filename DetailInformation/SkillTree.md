@@ -38,4 +38,4 @@
 - [UIDebuggingInformationOverlay](http://ryanipete.com/blog/ios/swift/objective-c/uidebugginginformationoverlay/)
 
 # 8. 性能调试
-- Instru
+- Instrument
