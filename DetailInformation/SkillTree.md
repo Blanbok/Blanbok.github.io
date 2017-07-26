@@ -40,5 +40,6 @@
 # 8. 性能调试
 - Instrument
 
-# 9. 阅读的书籍
-- 《Object-C编程全解》-启蒙
+# 9. 预备阅读的资料
+- [WeRead团队博客](http://wereadteam.github.io)
+- [腾讯移动品质中心](http://tmq.qq.com/?s=ios)
