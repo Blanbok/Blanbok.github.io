@@ -2,7 +2,7 @@
 
 <head>
 <meta charset="utf-8">
-<title>BlanBok的博客</title>
+<title># Object-C编码规范</title>
 <style>
 @font-face {
   font-family: octicons-anchor;
@@ -838,21 +838,350 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 </style>
 
 <style> @media print{ .hljs{overflow: visible; word-wrap: break-word !important;} }</style></head><body><div class="markdown-body">
-<p><center>BlanBok的博客</center></p>
+<h1 id="toc_0">Object-C编码规范</h1>
+
+<p>这份规范基于当前通用语言英语未能达到无障碍阅读，同时也基于自己当前的编码习惯进行制订，旨在基于当前的编码习惯进行制订。<br/>
+下次开会的时候，大家还是需要根据自己的习惯，提出相应的针对性意见。后期将参考此次会上的意见进行修改。</p>
+
+<blockquote>
+<p>最近大佬要规范下团队里的编码规范，作为狗腿子的咱自然是要响应下号召咯&hellip;顺带的自己也想把规范定下来，后面一步步的修订，方便代码更新迭代。<br/>
+还是想着能让自己代码简洁、明了、具有表达力的😁<br/>
+希望下次谁谁看代码的时候，不用特意去对照界面就能了解这是个做什么的。</p>
+</blockquote>
 
 <ul>
 <li>
-<a href="#toc_0">第一个水水水水</a>
+<a href="#toc_0">Object-C编码规范</a>
 </li>
 <li>
-<a href="#toc_1">第二个奥术大师多</a>
+<a href="#toc_1">一、命名规范</a>
+<ul>
+<li>
+<a href="#toc_2">1、介绍</a>
+<ul>
+<li>
+<a href="#toc_3"><span style="color:#666">RC原则</span></a>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<a href="#toc_4">1.  匈牙利命名：</a>
+</li>
+<li>
+<a href="#toc_5">2.  驼峰式命名法</a>
+</li>
+<li>
+<a href="#toc_6">3.  帕斯卡命名法</a>
+</li>
+<li>
+<a href="#toc_7">4.  下划线命名法</span></a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_8"><span style="color:#666">TEDC原则</span></a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_9">2、 实际命名规范</a>
+<ul>
+<li>
+<ul>
+<li>
+<a href="#toc_10"><span style="color:#666">一般变量名命名</span></a>
+</li>
+<li>
+<a href="#toc_11"><span style="color:#666">一般变量名命名模型内的属性命名</span></a>
+</li>
+<li>
+<a href="#toc_12"><span style="color:#666">类命名</span></a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_13">References</a>
 </li>
 </ul>
 
 
-<h1 id="toc_0">第一个水水水水</h1>
+<h1 id="toc_1">一、命名规范</h1>
 
-<h1 id="toc_1">第二个奥术大师多</h1>
+<p>我们所写的代码主要是为了阅读，其次才是被机器执行。所以我们要写：</p>
+
+<ul>
+<li>让别人能读懂的代码</li>
+<li>可扩展的代码</li>
+<li>可测试的代码(代码应该具备可测试性，对没有可测试性的代码写测试，是浪费生命的表现)</li>
+</ul>
+
+<h2 id="toc_2">1、介绍</h2>
+
+<h3 id="toc_3"><span style="color:#666">RC原则</span></h3>
+
+<blockquote>
+<p>可读性高(Readable)<br/>
+防止命名冲突(Conflict Name prevention)</p>
+</blockquote>
+
+<p>说起命名，就先来说下平时常用到的命名方法：</p>
+
+<h6 id="toc_4">1.  匈牙利命名：</h6>
+
+<p>开头字母用变量类型的缩写，其余部分用变量的英文或英文的缩写，要求单词第一个字母大写。</p>
+
+<pre><code class="language-Swift">int iMyAge; “i”是int类型的缩写； 
+char cMyName[10]; “c”是char类型的缩写； 
+float fManHeight; “f”是float类型的缩写；
+</code></pre>
+
+<h6 id="toc_5">2.  驼峰式命名法</h6>
+
+<p>又叫小驼峰式命名法。 <br/>
+第一个单词首字母小写，后面其他单词首字母大写。</p>
+
+<pre><code class="language-Swift">int myAge; 
+char myName[10]; 
+float manHeight;
+</code></pre>
+
+<h6 id="toc_6">3.  帕斯卡命名法</h6>
+
+<p>又叫大驼峰式命名法。 <br/>
+每个单词的第一个字母都大写。</p>
+
+<pre><code>int MyAge; 
+char MyName[10]; 
+float ManHeight;
+</code></pre>
+
+<p><span id=underline></span></p>
+
+<h6 id="toc_7">4.  下划线命名法</span></h6>
+
+<p>在命名中添加下划线用以标识<br/>
+一般Object-C中建议我们在命名前加<code>_</code>，用以区分成员变量与其它变量的<br/>
+在命名后加<code>_</code>，通常用在宏命名中<br/>
+其它情况下在，<code>_</code>添加在标识不同含义的单词块之间用以区分</p>
+
+<pre><code>int _myage; 
+char my_name[10]; 
+__FILE__
+</code></pre>
+
+<h3 id="toc_8"><span style="color:#666">TEDC原则</span></h3>
+
+<blockquote>
+<p>简洁(Terse)<br/>
+具有表达力(Expressive)<br/>
+只做一件事(Do one thing)</p>
+</blockquote>
+
+<p>Objective-C 的命名通常都比较长, 名称遵循驼峰式命名法. 一个好的命名标准很简单, 就是做到在开发者一看到名字时, 就能够懂得它的含义和使用方法. </p>
+
+<p>借用官方的例子</p>
+
+<blockquote>
+<p>尽可能具有表达力和简洁是好的，但是表达力不应该因为简洁而受到影响。</p>
+</blockquote>
+
+<table>
+<thead>
+<tr>
+<th>代码</th>
+<th>点评</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>insertObject:atIndex:</td>
+<td>Good</td>
+</tr>
+<tr>
+<td>insert:at:</td>
+<td>不清晰;要插⼊什么?“at”表⽰示什么?</td>
+</tr>
+<tr>
+<td>removeObjectAtIndex:</td>
+<td>Good</td>
+</tr>
+<tr>
+<td>removeObject:</td>
+<td>不错,因为⽅法是⽤用来移除作为参数的对象</td>
+</tr>
+<tr>
+<td>remove:</td>
+<td>不清晰;要移除什么?</td>
+</tr>
+</tbody>
+</table>
+
+<blockquote>
+<p>一般来说，不要缩写事物的名称。把它们拼出来，即使它们很长:</p>
+</blockquote>
+
+<table>
+<thead>
+<tr>
+<th>代码</th>
+<th>点评</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>destinationSelection</td>
+<td>Good</td>
+</tr>
+<tr>
+<td>destSel</td>
+<td>不清晰</td>
+</tr>
+<tr>
+<td>setBackgroundColor:</td>
+<td>Good</td>
+</tr>
+<tr>
+<td>setBkgdColor:</td>
+<td>不清晰</td>
+</tr>
+</tbody>
+</table>
+
+<blockquote>
+<p>避免API名称中的歧义，例如可以用多种方法解释的方法名</p>
+</blockquote>
+
+<table>
+<thead>
+<tr>
+<th>代码</th>
+<th>点评</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>sendPort</td>
+<td>它是发送端口还是返回?</td>
+</tr>
+<tr>
+<td>displayName</td>
+<td>它是在用户界面中显示一个名称还是返回接收者的标题?</td>
+</tr>
+</tbody>
+</table>
+
+<p>需要看更多的规范可以查看下<a href="https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/CodingGuidelines/Articles/NamingBasics.html#//apple_ref/doc/uid/20001281-BBCHBFAH">官方的文档</a></p>
+
+<h2 id="toc_9">2、 实际命名规范</h2>
+
+<h4 id="toc_10"><span style="color:#666">一般变量名命名</span></h4>
+
+<p>于小子个人而言，对于变量名使用更多的是下划线加驼峰式的命名，尽量用自然语言命名自己的变量<br/>
+<span style="color:#F00">[小写类型前缀+<code>_</code>+介绍]的做法。<span>【介绍使用驼峰式,尽量用自然语言表达自己的意思。】</p>
+
+<p><code>@property (nonnull,nonatomic,strong) UIImageView *imageView_head;</code></p>
+
+<h4 id="toc_11"><span style="color:#666">一般变量名命名模型内的属性命名</span></h4>
+
+<p>当下后台属性命名方式：<a href="#underline"><span style="color:lightGray">下划线命名</span></a></p>
+
+<p>对于用于解析后台数据的模型，应尽量保持与后台命名方式一致，最好能命名完全一致<br/>
+对于用于处理本地数据的模型，也应保持与后台命名方式一致。</p>
+
+<p><span style="color:#F00"><strong>即应保证具有某一共同功能的类型命名方式一致。</strong></span></p>
+
+<h4 id="toc_12"><span style="color:#666">类命名</span></h4>
+
+<p>对于一般的类，通常是使用大驼峰式的命名方式<br/>
+类名的拼写方式一般采用<span style="color:#F00">[标识 + 模块名称+功能介绍+类型]</span><br/>
+<strong>标识</strong>用于区分其它第三方的类，一般为开发者或者开发公司的标识<br/>
+<strong>模块名称</strong>标识当前类在界面中所处模块名称<br/>
+<strong>功能介绍</strong>标识当前类在当前模块中的作用<br/>
+<strong>类型</strong>标识当前类的类型</p>
+
+<p>其中最有争议的应该是<strong>模块名称</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>位置</th>
+<th>模块名称</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>根控制器</td>
+<td><code>Base</code></td>
+</tr>
+<tr>
+<td>一般控制器</td>
+<td>其根控制器的<strong>功能介绍</strong></td>
+</tr>
+<tr>
+<td>一般视图</td>
+<td>下一级响应者（父视图或是其所属的控制器）的<strong>功能介绍</strong></td>
+</tr>
+<tr>
+<td>通用控制器（例如：登陆、注册或者是好几个<code>TabBar</code>分栏都会跳转的控制器）</td>
+<td><code>public</code></td>
+</tr>
+<tr>
+<td>通用视图（用于多个界面的视图）</td>
+<td><code>public</code></td>
+</tr>
+</tbody>
+</table>
+
+<p>对控制器而言，模块名称即其根视图的<strong>功能介绍</strong>，若当前控制器即根控制器，则当前控制器的模块标识为<code>Base</code></p>
+
+<p>对于类名，小子是按其在界面中的层次进行命名<br/>
+对于处于界面第一级的视图 将它的 上一级功能名称的 拼接字段定为<code>Base</code><br/>
+如<code>JYBaseHomeViewController</code> 表示首页的根控制器<br/>
+其中</p>
+
+<table>
+<thead>
+<tr>
+<th>标识</th>
+<th>上一级功能</th>
+<th>功能介绍</th>
+<th>类型</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>JY</code></td>
+<td><code>Base</code></td>
+<td><code>Home</code></td>
+<td><code>ViewController</code></td>
+</tr>
+</tbody>
+</table>
+
+<h1 id="toc_13">References</h1>
+
+<p><a href="http://blog.csdn.net/f_zyj/article/details/51510085">三种编程命名规范（匈牙利命名法、驼峰式命名法、帕斯卡命名法）</a><br/>
+<a href="http://www.cnblogs.com/richieyang/p/4840614.html">编写让别人能够读懂的代码</a><br/>
+<a href="http://www.cnblogs.com/iOS-mt/p/5445284.html">IOS开发（OC）中的命名规范</a><br/>
+<a href="http://www.cocoachina.com/ios/20150508/11780.html">Objective-C开发编码规范</a><br/>
+<a href="http://www.jianshu.com/p/414bb5a53139">iOS开发总结之代码规范</a><br/>
+<a href="http://www.cnblogs.com/gfxxbk/p/5469017.html">iOS开发代码规范(通用)</a><br/>
+<a href="http://www.jianshu.com/p/71fdd1ae714c">iOS中书写代码规范35条小建议:</a></p>
 
 </div></body>
 
