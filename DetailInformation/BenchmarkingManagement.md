@@ -10,7 +10,7 @@
 
 > 下一步(下一个步骤可以直接开始，设置开始时间、周期、最后期限)
 
-# 1、[My30DaysofSwift-4.0](https://github.com/Blanbok/My30DaysofSwift-4.0)
+# 一、[My30DaysofSwift-4.0](https://github.com/Blanbok/My30DaysofSwift-4.0)
   
 1. 目标
 - 学会swift语言的基本用法
@@ -25,9 +25,9 @@
 - 行动过程：仿照[30DaysofSwift](https://github.com/allenwong/30DaysofSwift)制订自己的30天学习计划[My30DaysofSwift-4.0](https://github.com/Blanbok/My30DaysofSwift-4.0)
 
 4. 完成情况
-- 2017.07.18 开始实施
+- 2017.07.18 开始进行
 - 2017.07.21 原定目标基本完成
-- 拓展目标持续进行
+- 原项目结束，2017.07.24 拓展项目[One-day-one-project](https://github.com/Blanbok/One-day-one-project)开始
 
 5. 自省改善
 - 除原定计划外，可以制定增加拓展计划以应对计划过早完成的情况
@@ -41,7 +41,7 @@
 - 过往需要掌握的功能点通过每日小项目进行掌握
 - 参考其它优秀的进步计划来优化自己的提升计划
 
-# 2、30 days English mastery
+# 二、40 days English mastery
 1. 目标
 - 掌握英文基本听说读写
 - 翻译阅读英文原文
@@ -56,3 +56,12 @@
 
 4. 完成情况
 - 2017.07.23 开始实施 通过`沪江开心词场`开始练习
+
+# 三、[One-day-one-project](https://github.com/Blanbok/One-day-one-project)
+
+1. 目标
+- It's never too late to learn
+- 保持前行
+
+2. 完成情况
+- 2017.07.24 开始进行
