@@ -1,4 +1,4 @@
-# Object-C编码规范
+Objective-c Coding Standard
 
 这份规范基于当前通用语言英语未能达到无障碍阅读，同时也基于自己当前的编码习惯进行制订，旨在基于当前的编码习惯进行制订。
 下次开会的时候，大家还是需要根据自己的习惯，提出相应的针对性意见。后期将参考此次会上的意见进行修改。
@@ -27,7 +27,7 @@
 ###### 1.  匈牙利命名：
 开头字母用变量类型的缩写，其余部分用变量的英文或英文的缩写，要求单词第一个字母大写。
 
-```Swift
+```Objective-c
 int iMyAge; “i”是int类型的缩写； 
 char cMyName[10]; “c”是char类型的缩写； 
 float fManHeight; “f”是float类型的缩写；
@@ -36,7 +36,7 @@ float fManHeight; “f”是float类型的缩写；
 又叫小驼峰式命名法。 
 第一个单词首字母小写，后面其他单词首字母大写。
 
-```Swift
+```Objective-c
 int myAge; 
 char myName[10]; 
 float manHeight;
@@ -45,7 +45,7 @@ float manHeight;
 又叫大驼峰式命名法。 
 每个单词的第一个字母都大写。
 
-```
+```Objective-c
 int MyAge; 
 char MyName[10]; 
 float ManHeight;
@@ -57,7 +57,7 @@ float ManHeight;
 在命名后加`_`，通常用在宏命名中
 其它情况下在，`_`添加在标识不同含义的单词块之间用以区分
 
-```
+```Objective-c
 int _myage; 
 char my_name[10]; 
 __FILE__
@@ -106,10 +106,11 @@ displayName | 它是在用户界面中显示一个名称还是返回接收者的
 于小子个人而言，对于变量名使用更多的是下划线加驼峰式的命名，尽量用自然语言命名自己的变量
 <span style="color:#F00">[小写类型前缀+`_`+介绍]的做法。<span>【介绍使用驼峰式,尽量用自然语言表达自己的意思。】
 
+```Objective-c
+@property (nonnull,nonatomic,strong) UIImageView *imageView_head;
+```
 
-`@property (nonnull,nonatomic,strong) UIImageView *imageView_head;`
-
-#### <span style="color:#666">一般变量名命名模型内的属性命名</span>
+#### <span style="color:#666">模型内的属性命名</span>
 当下后台属性命名方式：[<span style="color:lightGray">下划线命名</span>](#underline)
         
 对于用于解析后台数据的模型，应尽量保持与后台命名方式一致，最好能命名完全一致
