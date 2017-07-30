@@ -57,7 +57,7 @@
 4. 完成情况
 - 2017.07.23 开始实施 通过`沪江开心词场`开始练习
 
-# 三、[One-day-one-project](https://github.com/Blanbok/One-day-one-project)
+# 三、[One-project-one-plan](https://github.com/Blanbok/One-day-one-project)
 
 1. 目标
 - It's never too late to learn
@@ -65,3 +65,4 @@
 
 2. 完成情况
 - 2017.07.24 开始进行
+- 2017.07.30 更改执行步骤
