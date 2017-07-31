@@ -849,6 +849,8 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 希望下次谁谁看代码的时候，不用特意去对照界面就能了解这是个做什么的。</p>
 </blockquote>
 
+<hr/>
+
 <ul>
 <li>
 <a href="#toc_0">一、命名规范</a>
@@ -886,56 +888,62 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 <a href="#toc_8">2、TEDC原则</a>
 <ul>
 <li>
-<a href="#toc_9">（1）表达力 &gt; 简洁</a>
+<a href="#toc_9">表达力 &gt; 简洁</a>
+</li>
+<li>
+<a href="#toc_10">清晰表达意思</a>
+</li>
+<li>
+<a href="#toc_11">避免歧义</a>
 </li>
 </ul>
 </li>
 </ul>
 </li>
 <li>
-<a href="#toc_10">（二）、 实际规范</a>
+<a href="#toc_12">（二）、 实际规范</a>
 <ul>
 <li>
 <ul>
 <li>
-<a href="#toc_11">1、变量命名</a>
+<a href="#toc_13">1、变量命名</a>
 <ul>
 <li>
-<a href="#toc_12">（1）一般变量命名</a>
+<a href="#toc_14">（1）一般变量命名</a>
 </li>
 <li>
-<a href="#toc_13">（2）模型内的属性命名</a>
+<a href="#toc_15">（2）模型内的属性命名</a>
 </li>
 </ul>
 </li>
 <li>
-<a href="#toc_14">2、类命名</a>
+<a href="#toc_16">2、类命名</a>
 </li>
 <li>
-<a href="#toc_15">3、方法命名</a>
+<a href="#toc_17">3、方法命名</a>
 <ul>
 <li>
-<a href="#toc_16">（1）表达力、简洁</a>
+<a href="#toc_18">（1）表达力、简洁</a>
 </li>
 <li>
-<a href="#toc_17">（2）只做一件事</a>
+<a href="#toc_19">（2）只做一件事</a>
 </li>
 <li>
-<a href="#toc_18">（3） 尽可能少的参数</a>
+<a href="#toc_20">（3） 尽可能少的参数</a>
 </li>
 </ul>
 </li>
 <li>
-<a href="#toc_19">4、类别命名</a>
+<a href="#toc_21">4、类别命名</a>
 </li>
 <li>
-<a href="#toc_20">5、枚举的命名</a>
+<a href="#toc_22">5、枚举的命名</a>
 </li>
 <li>
-<a href="#toc_21">6、const常量</a>
+<a href="#toc_23">6、const常量</a>
 </li>
 <li>
-<a href="#toc_22">7、宏命名</a>
+<a href="#toc_24">7、宏命名</a>
 </li>
 </ul>
 </li>
@@ -944,28 +952,55 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 </ul>
 </li>
 <li>
-<a href="#toc_23">二、注释规范</a>
+<a href="#toc_25">二、注释规范</a>
 <ul>
 <li>
 <ul>
 <li>
-<a href="#toc_24">类前的注释</a>
+<a href="#toc_26">1、类前的注释</a>
 </li>
 <li>
-<a href="#toc_25">接口注释</a>
+<a href="#toc_27">2、接口注释</a>
 </li>
 </ul>
 </li>
 </ul>
 </li>
 <li>
-<a href="#toc_26">三、逻辑规范</a>
+<a href="#toc_28">三、逻辑规范</a>
+<ul>
+<li>
+<ul>
+<li>
+<a href="#toc_29">视图类的公有方法</a>
 </li>
 <li>
-<a href="#toc_27">四、工具或SDK的使用规范</a>
+<a href="#toc_30">事件执行规范</a>
 </li>
 <li>
-<a href="#toc_28">References</a>
+<a href="#toc_31">代码的重构规范</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_32">四、工具或SDK的使用规范</a>
+<ul>
+<li>
+<ul>
+<li>
+<a href="#toc_33">工具类的使用规范</a>
+</li>
+<li>
+<a href="#toc_34">其它类的集成规范</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_35">References</a>
 </li>
 </ul>
 
@@ -1056,7 +1091,7 @@ __FILE__
 
 <p><span id=TEDC_01></span></p>
 
-<h4 id="toc_9">（1）表达力 &gt; 简洁</h4>
+<h4 id="toc_9">表达力 &gt; 简洁</h4>
 
 <blockquote>
 <p>尽可能具有表达力和简洁是好的，但是表达力不应该因为简洁而受到影响。</p>
@@ -1094,6 +1129,8 @@ __FILE__
 </tbody>
 </table>
 
+<h4 id="toc_10">清晰表达意思</h4>
+
 <blockquote>
 <p>一般来说，不要缩写事物的名称。把它们拼出来，即使它们很长:</p>
 </blockquote>
@@ -1126,6 +1163,8 @@ __FILE__
 </tbody>
 </table>
 
+<h4 id="toc_11">避免歧义</h4>
+
 <blockquote>
 <p>避免API名称中的歧义，例如可以用多种方法解释的方法名</p>
 </blockquote>
@@ -1152,19 +1191,19 @@ __FILE__
 
 <p>需要察看更多的规范，请前往<a href="https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/CodingGuidelines/Articles/NamingBasics.html#//apple_ref/doc/uid/20001281-BBCHBFAH">官方文档</a></p>
 
-<h2 id="toc_10">（二）、 实际规范</h2>
+<h2 id="toc_12">（二）、 实际规范</h2>
 
-<h4 id="toc_11">1、变量命名</h4>
+<h4 id="toc_13">1、变量命名</h4>
 
-<h5 id="toc_12">（1）一般变量命名</h5>
+<h5 id="toc_14">（1）一般变量命名</h5>
 
-<p>于小子个人而言，对于变量名使用更多的是下划线加驼峰式的命名，尽量用自然语言命名自己的变量<br/>
+<p>于个人而言，变量名使用更多的是下划线加驼峰式的命名，尽量用自然语言命名自己的变量<br/>
 <span style="color:#F00">[小写类型前缀+<code>_</code>+介绍]的做法。<span>【介绍使用驼峰式,尽量用自然语言表达自己的意思。】</p>
 
 <pre><code class="language-Objective-c">@property (nonnull,nonatomic,strong) UIImageView *imageView_head;
 </code></pre>
 
-<h5 id="toc_13">（2）模型内的属性命名</h5>
+<h5 id="toc_15">（2）模型内的属性命名</h5>
 
 <p>坚持<span style="color:#F00">一致性</span>的原则</p>
 
@@ -1175,7 +1214,7 @@ __FILE__
 
 <p><span style="color:#F00"><strong>即应保证具有某一共同功能的类型命名方式一致。</strong></span></p>
 
-<h4 id="toc_14">2、类命名</h4>
+<h4 id="toc_16">2、类命名</h4>
 
 <p>命名方式：<a href="#named_03">大驼峰式命名法</a></p>
 
@@ -1247,7 +1286,7 @@ __FILE__
 </tbody>
 </table>
 
-<h4 id="toc_15">3、方法命名</h4>
+<h4 id="toc_17">3、方法命名</h4>
 
 <p>命名方式：<a href="#named_02">小驼峰式命名法</a></p>
 
@@ -1255,7 +1294,7 @@ __FILE__
 
 <p>方法名应具备以下特征：</p>
 
-<h5 id="toc_16">（1）表达力、简洁</h5>
+<h5 id="toc_18">（1）表达力、简洁</h5>
 
 <p>方法名应该是简洁并具有表达力，去除参数之后能形成可读的自然语言<br/>
 当这二者需要取舍，应该<a href="#TEDC_01">着重强调表达力</a></p>
@@ -1268,11 +1307,11 @@ __FILE__
 
 <p>给它们去掉参数，变成自然语言即 “<span style="color:#F00">insert Object at Index</span>”对“<span style="color:#F00">insert at</span>”，孰优孰劣一目了然</p>
 
-<h5 id="toc_17">（2）只做一件事</h5>
+<h5 id="toc_19">（2）只做一件事</h5>
 
 <p>当你无法为你的方法起一个准确的名称时，很可能你的方法不止做了一件事，违反了(Do one thing)。特别是你想在方法名中加入：And，Or，If等词时</p>
 
-<pre><code class="language-Objective-c">- (void)RegisterUser(User*) user SendEmail(bool)sendEmail
+<pre><code class="language-Objective-c">- (void)RegisterUser:(User*) user SendEmail:(bool)sendEmail
 {
     
 }
@@ -1280,24 +1319,24 @@ __FILE__
 
 <p>此时，应该将执行不同逻辑操作的方法分开，构成两个不同的方法来执行</p>
 
-<pre><code class="language-Objective-c">- (void)RegisterUser(User*)user
+<pre><code class="language-Objective-c">- (void)RegisterUser:(User*)user
 {
 
 }
 
-- (void)SendEmail(User*)user
+- (void)SendEmail:(User*)user
 {
 
 }
 </code></pre>
 
-<h5 id="toc_18">（3） 尽可能少的参数</h5>
+<h5 id="toc_20">（3） 尽可能少的参数</h5>
 
 <p>过多的参数让读者难以抓住代码的意图，同时过多的参数将会影响方法的稳定性。另外也预示着参数应该聚合为一个<code>Model</code></p>
 
 <p>参数为<span style="color:#F00">1-2</span>个最合适  </p>
 
-<pre><code class="language-Objective-c">- (void) RegisterUserName(NSString*)userName Password(NSString*) password Email(NSString*) email  Phone(NSString*)phone
+<pre><code class="language-Objective-c">- (void) RegisterUserName:(NSString*)userName Password:(NSString*) password Email:(NSString*) email  Phone:(NSString*)phone
 {
 
 }
@@ -1305,19 +1344,19 @@ __FILE__
 
 <p>此时参数超过3个，可以聚合成为一个模型，以增强可读性</p>
 
-<pre><code class="language-Objective-c">- (void) RegisterUser(User*)user
+<pre><code class="language-Objective-c">- (void) RegisterUser:(User*)user
 {
 
 }
 </code></pre>
 
-<h4 id="toc_19">4、类别命名</h4>
+<h4 id="toc_21">4、类别命名</h4>
 
 <p>命名方式：[类名+标识+扩展（大驼峰式）]</p>
 
 <p>例：如果我们想要创建一个基于<code>NSString</code>的类别用于判断字符串类型，我们应该把类别放到名字是<code>NSString+JYJudgmentType</code>的文件里。<code>NSString</code>为要扩展的类名，<code>JY</code>为标识，<code>JudgmentType</code>为扩展的功能。</p>
 
-<h4 id="toc_20">5、枚举的命名</h4>
+<h4 id="toc_22">5、枚举的命名</h4>
 
 <p>命名方式：[标识+功能（大驼峰式）]</p>
 
@@ -1347,7 +1386,7 @@ __FILE__
 
 <p><code>JY</code>为标识，<code>JudgmentType</code>为该枚举的功能，<code>NumberCharacters</code>为当前类型的特征</p>
 
-<h4 id="toc_21">6、const常量</h4>
+<h4 id="toc_23">6、const常量</h4>
 
 <p>命名方式：[常量标识（项目开始前约定好）+<code>_</code>+功能（大驼峰式）]</p>
 
@@ -1355,23 +1394,23 @@ __FILE__
 
 <p>例如我们常用的<code>ReuseIdentifier</code>也可以规范成<code>const_ReuseIdentifier</code></p>
 
-<h4 id="toc_22">7、宏命名</h4>
+<h4 id="toc_24">7、宏命名</h4>
 
 <p>按照推荐  下划线命名+全部字母大写<br/>
 例如系统的宏<code>__FILE__</code><br/>
 我们也可以加上自己的标识用以和系统的宏区分开来<code>JY__FILE__</code><br/>
 如果还要标识宏隶属于某一模块的话，还可以更进一步的加上模块的标识<code>JY__SQL__FILE__</code></p>
 
-<h1 id="toc_23">二、注释规范</h1>
+<h1 id="toc_25">二、注释规范</h1>
 
 <blockquote>
 <p>关于注释，虽说是有很大一份人认为优秀的代码可以完全替代注释，然而在实际上，英语这么强的还是很少的🤦‍♂️。而且对我们来说，用尽可能低的标准来要求别人，项目可维护性。（唔，连中文注释都看不懂那就无解了😒）<br/>
 注释不用做得太夸张，由于开发中阅读注释大部分都只是为了关联或者了解某项功能，所以我们只需在关键点添加注释即可。</p>
 </blockquote>
 
-<h3 id="toc_24">类前的注释</h3>
+<h3 id="toc_26">1、类前的注释</h3>
 
-<p>每个类 <code>.h</code>文件中添加一段标识注释，用以解释当前类的用法</p>
+<p>类的 <code>.h</code>文件中添加一段标识注释，用以解释当前类的用法</p>
 
 <pre><code>/*
  创建人：（标识创建）
@@ -1380,22 +1419,60 @@ __FILE__
  --修改人：（标识功能修改者）
  修改版本：类修改的版本（哪个版本有进行修订）
  修改描述：（修订某一功能）
- ···：重复【修改人 — 修改版本 — 修改描述】三列的介绍。&quot;创建人&quot;在之后的修改过程中也作为&quot;修改人&quot;
+ ···：重复【修改人 — 修改版本 — 修改描述】三列的介绍。&quot;创建人&quot;在之后的修改过程中也将作为&quot;修改人&quot;
  */
 </code></pre>
 
-<h3 id="toc_25">接口注释</h3>
+<h3 id="toc_27">2、接口注释</h3>
 
 <p>推荐使用 <code>option</code>+<code>command</code>+<code>/</code>快捷注释命令<br/>
-对类的接口处的属性</p>
+对类的接口处的属性、方法进行介绍</p>
 
-<h1 id="toc_26">三、逻辑规范</h1>
+<p>属性：</p>
 
-<h1 id="toc_27">四、工具或SDK的使用规范</h1>
+<pre><code class="language-objective-C">/**
+ 介绍属性
+ */
+@property (nonnull,nonatomic,strong) NSObject *object;
+</code></pre>
+
+<p>方法：</p>
+
+<pre><code class="language-objective-C">/**
+ 介绍方法功能
+
+ @param obj 参数介绍
+ */
+- (void)RegisterUser:(User*)user;
+</code></pre>
+
+<h1 id="toc_28">三、逻辑规范</h1>
+
+<h3 id="toc_29">视图类的公有方法</h3>
+
+<p>对于封装的视图类，常会用到的方法有三类：</p>
+
+<ul>
+<li>添加子视图</li>
+<li>设置子视图在父视图中的位置</li>
+<li>人机交互事件的设置</li>
+</ul>
+
+<p>基于此，希望至少在这一种类型封装上能形成规范，当然，能约定俗成是最好的了😄</p>
+
+<h3 id="toc_30">事件执行规范</h3>
+
+<h3 id="toc_31">代码的重构规范</h3>
+
+<h1 id="toc_32">四、工具或SDK的使用规范</h1>
+
+<h3 id="toc_33">工具类的使用规范</h3>
+
+<h3 id="toc_34">其它类的集成规范</h3>
 
 <p><span style="font-size:3rem">END</span></p>
 
-<h1 id="toc_28">References</h1>
+<h1 id="toc_35">References</h1>
 
 <p><a href="http://blog.csdn.net/f_zyj/article/details/51510085">三种编程命名规范（匈牙利命名法、驼峰式命名法、帕斯卡命名法）</a></p>
 

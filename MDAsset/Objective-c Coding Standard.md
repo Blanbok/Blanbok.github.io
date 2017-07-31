@@ -352,9 +352,15 @@ typedef NS_ENUM(NSInteger,JYJudgmentType){
 
 基于此，希望至少在这一种类型封装上能形成规范，当然，能约定俗成是最好的了😄
 
+### 事件执行规范
 
+### 代码的重构规范
 
 # 四、工具或SDK的使用规范
+
+### 工具类的使用规范
+
+### 其它类的集成规范
 
 <span style="font-size:3rem">END</span>
 
