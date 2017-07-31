@@ -28,6 +28,7 @@ Objective-c Coding Standard
 
 ##### 常用命名方法
 
+
 ###### （1）匈牙利命名：
 
 开头字母用变量类型的缩写，其余部分用变量的英文或英文的缩写，要求单词第一个字母大写。
@@ -37,6 +38,8 @@ int iMyAge; “i”是int类型的缩写；
 char cMyName[10]; “c”是char类型的缩写； 
 float fManHeight; “f”是float类型的缩写；
 ```
+
+<span id=named_02></span>
 ###### （2）驼峰式命名法
 
 又叫小驼峰式命名法。 
@@ -47,6 +50,8 @@ int myAge;
 char myName[10]; 
 float manHeight;
 ```
+
+<span id=named_03></span>
 ###### （3）帕斯卡命名法
 
 又叫大驼峰式命名法。 
@@ -57,7 +62,7 @@ int MyAge;
 char MyName[10]; 
 float ManHeight;
 ```
-<span id=underline></span>
+<span id=named_04></span>
 ###### （4）下划线命名法
 在命名中添加下划线用以标识
 一般Object-C中建议我们在命名前加`_`，用以区分成员变量与其它变量的
@@ -82,6 +87,7 @@ Objective-C 的命名通常都比较长, 名称遵循驼峰式命名法. 一个�
 
 借用官方的例子
 
+<span id=TEDC_01></span>
 #### （1）表达力 > 简洁
 
 > 尽可能具有表达力和简洁是好的，但是表达力不应该因为简洁而受到影响。
@@ -126,8 +132,9 @@ displayName | 它是在用户界面中显示一个名称还是返回接收者的
 ```
 
 ##### （2）模型内的属性命名
+坚持<span style="color:#F00">一致性</span>的原则
 
-当下后台属性命名方式：[<span style="color:lightGray">下划线命名</span>](#underline)
+当下后台属性命名方式：[<span style="color:lightGray">下划线命名</span>](#named_04)
         
 对于用于解析后台数据的模型，应尽量保持与后台命名方式一致，最好能命名完全一致
 对于用于处理本地数据的模型，也应保持与后台命名方式一致。
@@ -135,6 +142,8 @@ displayName | 它是在用户界面中显示一个名称还是返回接收者的
 <span style="color:#F00">**即应保证具有某一共同功能的类型命名方式一致。**</span>
 
 #### 2、类命名
+
+命名方式：[大驼峰式命名法](#named_03)
 
 对于一般的类，通常是使用大驼峰式的命名方式
 类名的拼写方式一般采用<span style="color:#F00">[标识 + 模块名称+功能介绍+类型]</span>
@@ -166,11 +175,125 @@ displayName | 它是在用户界面中显示一个名称还是返回接收者的
 
 #### 3、方法命名
 
-#### 4、宏命名
+命名方式：[小驼峰式命名法](#named_02)
+
+方法名应遵守小驼峰原则，首字母小写，其他单词首字母大写,每个空格分割的名称以动词开头。执行性的方法应该以动词开头，小写字母开头，返回性的方法应该以返回的内容开头，但之前不要加get。
+
+方法名应具备以下特征：
+
+#####（1）表达力、简洁
+方法名应该是简洁并具有表达力，去除参数之后能形成可读的自然语言
+当这二者需要取舍，应该[着重强调表达力](#TEDC_01)
+
+例如：
+
+使用`insertObject:(NSObject*)object  atIndex: (NSInteger)index `
+
+比`insert:(NSObject*)object at: (NSInteger)index`更合适
+
+给它们去掉参数，变成自然语言即 “<span style="color:#F00">insert Object at Index</span>”对“<span style="color:#F00">insert at</span>”，孰优孰劣一目了然
+
+##### （2）只做一件事
+
+当你无法为你的方法起一个准确的名称时，很可能你的方法不止做了一件事，违反了(Do one thing)。特别是你想在方法名中加入：And，Or，If等词时
+
+```Objective-c
+- (void)RegisterUser(User*) user SendEmail(bool)sendEmail
+{
+    
+}
+```
+
+此时，应该将执行不同逻辑操作的方法分开，构成两个不同的方法来执行
+
+```Objective-c
+- (void)RegisterUser(User*)user
+{
+
+}
+
+- (void)SendEmail(User*)user
+{
+
+}
+```
+
+##### （3） 尽可能少的参数
+
+过多的参数让读者难以抓住代码的意图，同时过多的参数将会影响方法的稳定性。另外也预示着参数应该聚合为一个`Model`
+
+参数为<span style="color:#F00">1-2</span>个最合适  
+
+```Objective-c
+- (void) RegisterUserName(NSString*)userName Password(NSString*) password Email(NSString*) email  Phone(NSString*)phone
+{
+
+}
+```
+此时参数超过3个，可以聚合成为一个模型，以增强可读性
+
+```Objective-c
+- (void) RegisterUser(User*)user
+{
+
+}
+```
+
+#### 4、类别命名
+
+命名方式：[类名+标识+扩展（大驼峰式）]
+
+例：如果我们想要创建一个基于`NSString`的类别用于判断字符串类型，我们应该把类别放到名字是`NSString+JYJudgmentType`的文件里。`NSString`为要扩展的类名，`JY`为标识，`JudgmentType`为扩展的功能。
+
+#### 5、枚举的命名
+
+命名方式：[标识+功能（大驼峰式）]
+
+类型命名：[枚举名+特征]
+
+下面我们列举一组用于判断字符串类型的枚举
+
+```Objective-c
+typedef NS_ENUM(NSInteger,JYJudgmentType){
+    ///数字
+    JYJudgmentTypeNumberCharacters             = 1,
+    ///英文
+    JYJudgmentTypeOrdinaryEnglishCharacters    = 1 << 1,
+    ///中文
+    JYJudgmentTypeChineseCharacters            = 1 << 2,
+    ///电话
+    JYJudgmentTypeMobile               = 1 << 3,
+    ///身份证
+    JYJudgmentTypeIDCard               = 1 << 4,
+    ///银行卡
+    JYJudgmentTypeBankCard             = 1 << 5,
+    ///邮箱
+    JYJudgmentTypeEmail             = 1 << 6,
+};
+```
+
+我们就以`JYJudgmentTypeNumberCharacters`为例
+
+`JY`为标识，`JudgmentType`为该枚举的功能，`NumberCharacters`为当前类型的特征
+
+#### 6、const常量
+
+命名方式：[常量标识（项目开始前约定好）+`_`+功能（大驼峰式）]
+
+或者：[功能（大驼峰式）]
+
+例如我们常用的`ReuseIdentifier`也可以规范成`const_ReuseIdentifier`
+
+#### 7、宏命名
 
 # 二、注释规范
 
-### 类前注释
+> 关于注释，虽说是有很大一份人认为优秀的代码可以完全替代注释，然而在实际上，英语这么强的还是很少的🤦‍♂️。而且对我们来说，用尽可能低的标准来要求别人，项目可维护性。（唔，连中文注释都看不懂那就无解了😒）
+> 注释不用做得太夸张，由于开发中阅读注释大部分都只是为了关联或者了解某项功能，所以我们只需在关键点添加注释即可。
+
+### 类前的注释
+每个类 `.h`文件中添加一段标识注释，用以解释当前类的用法
+
 ```
 /*
  创建人：（标识创建）
@@ -182,6 +305,10 @@ displayName | 它是在用户界面中显示一个名称还是返回接收者的
  ···：重复【修改人 — 修改版本 — 修改描述】三列的介绍。"创建人"在之后的修改过程中也作为"修改人"
  */
 ```
+
+### 接口注释
+推荐使用 `option`+`command`+`/`快捷注释命令
+对类的接口处的属性
 
 # 三、逻辑规范
 
