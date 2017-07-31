@@ -7,6 +7,9 @@ Objective-c Coding Standard
 > 还是想着能让自己代码更加的简洁、明了、具有表达力的😁
 > 希望下次谁谁看代码的时候，不用特意去对照界面就能了解这是个做什么的。
 
+-------
+
+
 [TOC]
 
 # 一、命名规范
@@ -88,8 +91,7 @@ Objective-C 的命名通常都比较长, 名称遵循驼峰式命名法. 一个�
 借用官方的例子
 
 <span id=TEDC_01></span>
-#### （1）表达力 > 简洁
-
+#### 表达力 > 简洁
 > 尽可能具有表达力和简洁是好的，但是表达力不应该因为简洁而受到影响。
 
 代码|点评
@@ -100,6 +102,7 @@ removeObjectAtIndex: | Good
 removeObject: | 不错,因为⽅法是⽤用来移除作为参数的对象
 remove:|不清晰;要移除什么?
 
+#### 清晰表达意思
 > 一般来说，不要缩写事物的名称。把它们拼出来，即使它们很长:
 
 代码|点评
@@ -109,6 +112,8 @@ destSel | 不清晰
 setBackgroundColor: | Good
 setBkgdColor: | 不清晰
 
+
+#### 避免歧义
 > 避免API名称中的歧义，例如可以用多种方法解释的方法名
 
 代码|点评
@@ -124,7 +129,7 @@ displayName | 它是在用户界面中显示一个名称还是返回接收者的
 
 #####（1）一般变量命名
 
-于小子个人而言，对于变量名使用更多的是下划线加驼峰式的命名，尽量用自然语言命名自己的变量
+于个人而言，变量名使用更多的是下划线加驼峰式的命名，尽量用自然语言命名自己的变量
 <span style="color:#F00">[小写类型前缀+`_`+介绍]的做法。<span>【介绍使用驼峰式,尽量用自然语言表达自己的意思。】
 
 ```Objective-c
@@ -198,7 +203,7 @@ displayName | 它是在用户界面中显示一个名称还是返回接收者的
 当你无法为你的方法起一个准确的名称时，很可能你的方法不止做了一件事，违反了(Do one thing)。特别是你想在方法名中加入：And，Or，If等词时
 
 ```Objective-c
-- (void)RegisterUser(User*) user SendEmail(bool)sendEmail
+- (void)RegisterUser:(User*) user SendEmail:(bool)sendEmail
 {
     
 }
@@ -207,12 +212,12 @@ displayName | 它是在用户界面中显示一个名称还是返回接收者的
 此时，应该将执行不同逻辑操作的方法分开，构成两个不同的方法来执行
 
 ```Objective-c
-- (void)RegisterUser(User*)user
+- (void)RegisterUser:(User*)user
 {
 
 }
 
-- (void)SendEmail(User*)user
+- (void)SendEmail:(User*)user
 {
 
 }
@@ -225,7 +230,7 @@ displayName | 它是在用户界面中显示一个名称还是返回接收者的
 参数为<span style="color:#F00">1-2</span>个最合适  
 
 ```Objective-c
-- (void) RegisterUserName(NSString*)userName Password(NSString*) password Email(NSString*) email  Phone(NSString*)phone
+- (void) RegisterUserName:(NSString*)userName Password:(NSString*) password Email:(NSString*) email  Phone:(NSString*)phone
 {
 
 }
@@ -233,7 +238,7 @@ displayName | 它是在用户界面中显示一个名称还是返回接收者的
 此时参数超过3个，可以聚合成为一个模型，以增强可读性
 
 ```Objective-c
-- (void) RegisterUser(User*)user
+- (void) RegisterUser:(User*)user
 {
 
 }
@@ -296,8 +301,8 @@ typedef NS_ENUM(NSInteger,JYJudgmentType){
 > 关于注释，虽说是有很大一份人认为优秀的代码可以完全替代注释，然而在实际上，英语这么强的还是很少的🤦‍♂️。而且对我们来说，用尽可能低的标准来要求别人，项目可维护性。（唔，连中文注释都看不懂那就无解了😒）
 > 注释不用做得太夸张，由于开发中阅读注释大部分都只是为了关联或者了解某项功能，所以我们只需在关键点添加注释即可。
 
-### 类前的注释
-每个类 `.h`文件中添加一段标识注释，用以解释当前类的用法
+### 1、类前的注释
+类的 `.h`文件中添加一段标识注释，用以解释当前类的用法
 
 ```
 /*
@@ -307,19 +312,52 @@ typedef NS_ENUM(NSInteger,JYJudgmentType){
  --修改人：（标识功能修改者）
  修改版本：类修改的版本（哪个版本有进行修订）
  修改描述：（修订某一功能）
- ···：重复【修改人 — 修改版本 — 修改描述】三列的介绍。"创建人"在之后的修改过程中也作为"修改人"
+ ···：重复【修改人 — 修改版本 — 修改描述】三列的介绍。"创建人"在之后的修改过程中也将作为"修改人"
  */
 ```
 
-### 接口注释
+### 2、接口注释
 推荐使用 `option`+`command`+`/`快捷注释命令
-对类的接口处的属性
+对类的接口处的属性、方法进行介绍
+
+属性：
+
+```objective-C
+/**
+ 介绍属性
+ */
+@property (nonnull,nonatomic,strong) NSObject *object;
+```
+
+方法：
+
+```objective-C
+/**
+ 介绍方法功能
+
+ @param obj 参数介绍
+ */
+- (void)RegisterUser:(User*)user;
+```
 
 # 三、逻辑规范
+
+### 视图类的公有方法
+
+对于封装的视图类，常会用到的方法有三类：
+
+- 添加子视图
+- 设置子视图在父视图中的位置
+- 人机交互事件的设置
+
+基于此，希望至少在这一种类型封装上能形成规范，当然，能约定俗成是最好的了😄
+
+
 
 # 四、工具或SDK的使用规范
 
 <span style="font-size:3rem">END</span>
+
 # References
  [三种编程命名规范（匈牙利命名法、驼峰式命名法、帕斯卡命名法）](http://blog.csdn.net/f_zyj/article/details/51510085)
  
