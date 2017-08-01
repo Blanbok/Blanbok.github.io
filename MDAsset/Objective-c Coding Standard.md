@@ -347,7 +347,7 @@ typedef NS_ENUM(NSInteger,JYJudgmentType){
 
 # 三、逻辑规范
 
-### 视图类的公有方法
+### （一）视图类的公有方法
 
 对于封装的视图类，常会用到的方法有三类：
 
@@ -359,9 +359,10 @@ typedef NS_ENUM(NSInteger,JYJudgmentType){
 
 我就先抛砖引玉了：
 
-<span style="color:#F00">首先</span> 重写系统初始化方法，下面是把将普通的init方法和可视化的初始化方法重写，然后调用我们自己的初始化方法
+<span style="color:#F00">首先</span> 重写系统初始化方法，下面是把将普通的init方法和可视化的初始化方法重写，然后调用我们自己的初始化方法`- (void)commInit`
 
-```
+```objective-C
+//以frame初始化的方法
 - (instancetype)initWithFrame:(CGRect)frame
 {
     if (self = [super initWithFrame:frame]) {
@@ -370,6 +371,7 @@ typedef NS_ENUM(NSInteger,JYJudgmentType){
     return self;
 }
 
+//以可视化控件初始化的方法
 - (instancetype)initWithCoder:(NSCoder *)aDecoder
 {
     if (self = [super initWithCoder:aDecoder]) {
@@ -378,37 +380,154 @@ typedef NS_ENUM(NSInteger,JYJudgmentType){
     return self;
 }
 
+//自己的初始化方法
 - (void)commInit
 {
 
 }
 
+```
+
+之后在我们的初始化方法中调用需要的操作，这里我们使用了，子视图添加、约束设置和交互设置三个方法
+
+```objective-C
+//初始化方法
+- (void)commInit
+{
+    [self theSubViewAdd];
+    [self theLayoutSet];
+    [self theInterfaceEventSet];
+}
+
+//添加子视图
 - (void)theSubViewAdd
 {
 
 }
 
+//设置约束
 - (void)theLayoutSet
 {
     
 }
 
+//设置交互
 - (void)theInterfaceEventSet
 {
     
 }
-
 ```
 
-### 事件执行规范
+### （二）代码的重构规范
 
-### 代码的重构规范
+> 重构是一种对软件进行修改的行为，但它并不改变软件的功能特征，而是通过让软件程序更清晰，更简洁和更条理来改进软件的质量。
 
-# 四、工具或SDK的使用规范
+代码架构最初的设计也是经过精心的设计，具有良好架构的。但是随着时间的推移、需求的剧增，必须不断的修改原有的功能、追加新的功能，还免不了有一些缺陷需要修改。为了实现变更，不可避免的要违反最初的设计构架。经过一段时间以后，软件的架构就千疮百孔了。bug越来越多，越来越难维护，新的需求越来越难实现，最初的代码构架对新的需求渐渐的失去支持能力，而是成为一种制约。最后新需求的开发成本会超过开发一个新的软件的成本，这就使这个app的生命走到了尽头。
 
-### 工具类的使用规范
+#### 1、目的
 
-### 其它类的集成规范
+（1）持续偏纠和改进软件设计 
+
+（2）使代码更被其他人所理解 
+
+（3）帮助发现隐藏的代码缺陷
+
+（4）从长远来看，有助于提高编程效率，增加项目进度（进度是质量的敌人，质量是进度的朋友） 
+
+#### 2、不适用
+
+（1）逻辑看起来过于复杂，没时间去分析梳理。
+
+（2）不理解为什么前任程序员要这样编写。 
+
+（3）负责的是一个很重要的系统，而且时间很紧。 
+
+#### 3、方式
+
+#####（1）权限分离
+
+对一些“臃肿的类”，应当将其中分属其它类的处理逻辑，应当及时抽离出去。
+
+就以经典`MVC`模式下的赋值为例
+
+有些时候我们会将`Model`层的数据处理逻辑拿到`View`或`Controller`中来用，仅把`Model`层作为一个快速解析、调用数据的工具。
+
+```objective-C
+    NSString *money = [NSString stringWithFormat:@"总价%@万",_money];
+    self.label_money.text = money;
+```
+
+而从其各自的业务上来说，数据处理的功能也应放在`Model`层上才是
+
+```objective-C
+- (NSString *)money
+{
+    return [NSString stringWithFormat:@"总价%@万",self->_money];
+}
+```
+
+##### （2）提取类/方法
+
+适用于以下类：
+❶ 与其它类能共用相同的逻辑
+❷ 与其它类在架构上一定的相似性
+
+对于这些类可以提取出<span style="color:#F00">专门处理公有逻辑的新类</span>或<span style="color:#F00">架构相似的父类</span>为其减负。
+
+##### （3 ）利用好第三方代码托管平台
+
+对于某一类在项目间通用性更强的功能模块，更好的使用方式应该是放在第三方托管平台进行托管。做好`Pod`集成和`Carthage`集成的配置
+
+以便 当前功能模块的维护更新以及在下一个项目的快速导入。
+
+# 四、工具（类）的使用规范
+
+### （一）手写代码 和 Xib的取舍
+
+关于这个问题相信很多同学都有困惑，参考了国内iOS界的大神[唐巧](http://blog.devtang.com/2015/03/22/ios-dev-controversy-2/)和[喵神](https://onevcat.com/2013/12/code-vs-xib-vs-storyboard/)，结合自己在实际开发中的习惯，也就确立之后对于二者的使用了：
+
+- 对于复杂的、动态生成的界面，建议使用手工编写界面。
+- 对于需要统一风格的按钮或UI控件，建议使用手工用代码来构造。方便之后的修改和复用。
+- 对于需要有继承或组合关系的 UIView 类或 UIViewController 类，建议用代码手工编写界面。
+- 对于那些简单的、静态的、非核心功能界面，可以考虑使用 xib 或 storyboard 来完成。
+
+### （二）工具类的使用规范
+
+#### 1、UI调试工具
+
+对于UI的调试，据我所知的有两种：
+
+[Reveal](https://revealapp.com)和[UIDebuggingInformationOverlay](http://ryanipete.com/blog/ios/swift/objective-c/uidebugginginformationoverlay/)
+
+二者的用法同等便利，但[Reveal](https://revealapp.com)比起[UIDebuggingInformationOverlay](http://ryanipete.com/blog/ios/swift/objective-c/uidebugginginformationoverlay/)来功能无疑是丰富许多。
+
+[UIDebuggingInformationOverlay](http://ryanipete.com/blog/ios/swift/objective-c/uidebugginginformationoverlay/)现有的功能：
+
+1. 列出界面层次、视图位置、从属关系
+2. 对比设计图与APP运行时界面
+3. 获取界面上的目标约束
+
+[Reveal](https://revealapp.com)仅咱现在用到的功能在[UIDebuggingInformationOverlay](http://ryanipete.com/blog/ios/swift/objective-c/uidebugginginformationoverlay/)功能的基础上多了：
+1. 使用可视化的图来展示界面的层次
+2. GUI 上动态改变约束可以直接应用到APP上，实时展示改变效果（个人感觉这一点对后期UI的优化还是有点帮助的）
+3. 对于越狱的机器，可以用Reveal来”调试“其它应用界面
+
+所以说哟，能使用[Reveal](https://revealapp.com)还是用它为好，[UIDebuggingInformationOverlay](http://ryanipete.com/blog/ios/swift/objective-c/uidebugginginformationoverlay/)更多是在懒得使用或者实在用不了[Reveal](https://revealapp.com)的时候再用好了😦
+
+#### 2、图片添加工具
+
+说起来APPIcon，用得上的图片算起来也有8张了，没什么反人类的要求的话，图片内容基本一致，也仅是尺寸不一样，如果设计那边没什么便利的工具的话，那倒是可以使用下  [Asset Catalog Creator](https://itunes.apple.com/cn/app/asset-catalog-creator-free/id866571115?mt=12)，
+
+一键设置Icon，直接添加到系统资源库,简单粗暴。
+
+#### 3、项目优化工具
+
+会用Xcode那对Intrument一定不会陌生了，也不多说，要优化就尽量多用吧。
+
+#### 4、第三方代码托管
+
+终归还是[Github](https://github.com/)最通用
+
 
 <span style="font-size:3rem">END</span>
 
@@ -426,4 +545,15 @@ typedef NS_ENUM(NSInteger,JYJudgmentType){
 [iOS开发代码规范(通用)](http://www.cnblogs.com/gfxxbk/p/5469017.html)
 
 [iOS中书写代码规范35条小建议](http://www.jianshu.com/p/71fdd1ae714c)
+
+
+[iOS 开发中的争议（二）](http://blog.devtang.com/2015/03/22/ios-dev-controversy-2/)
+
+[代码手写UI，xib和StoryBoard间的博弈，以及Interface Builder的一些小技巧](https://onevcat.com/2013/12/code-vs-xib-vs-storyboard/)
+
+
+[iOS项目重构周记（一）](http://www.jianshu.com/p/395700466a7b)
+
+[代码重构意义和方法](http://blog.csdn.net/justinjing0612/article/details/41311577)
+
 
