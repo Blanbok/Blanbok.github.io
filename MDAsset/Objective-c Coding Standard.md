@@ -129,17 +129,21 @@ displayName | 它是在用户界面中显示一个名称还是返回接收者的
 
 #####（1）一般变量命名
 
+<span style="color:#F00">命名方式</span>：[小写类型前缀+`_`+介绍[小驼峰式](named_02)]的做法。【介绍尽量用自然语言表达自己的意思。】
+
 于个人而言，变量名使用更多的是下划线加驼峰式的命名，尽量用自然语言命名自己的变量
-<span style="color:#F00">[小写类型前缀+`_`+介绍]的做法。<span>【介绍使用驼峰式,尽量用自然语言表达自己的意思。】
 
 ```Objective-c
 @property (nonnull,nonatomic,strong) UIImageView *imageView_head;
 ```
 
 ##### （2）模型内的属性命名
+
+<span style="color:#F00">命名方式</span>：[下划线命名](#named_04)
+
 坚持<span style="color:#F00">一致性</span>的原则
 
-当下后台属性命名方式：[<span style="color:lightGray">下划线命名</span>](#named_04)
+当下后台属性命名方式：[下划线命名](#named_04)
         
 对于用于解析后台数据的模型，应尽量保持与后台命名方式一致，最好能命名完全一致
 对于用于处理本地数据的模型，也应保持与后台命名方式一致。
@@ -148,7 +152,7 @@ displayName | 它是在用户界面中显示一个名称还是返回接收者的
 
 #### 2、类命名
 
-命名方式：[大驼峰式命名法](#named_03)
+<span style="color:#F00">命名方式</span>：[大驼峰式命名法](#named_03)
 
 对于一般的类，通常是使用大驼峰式的命名方式
 类名的拼写方式一般采用<span style="color:#F00">[标识 + 模块名称+功能介绍+类型]</span>
@@ -180,7 +184,7 @@ displayName | 它是在用户界面中显示一个名称还是返回接收者的
 
 #### 3、方法命名
 
-命名方式：[小驼峰式命名法](#named_02)
+<span style="color:#F00">命名方式</span>：[小驼峰式命名法](#named_02)
 
 方法名应遵守小驼峰原则，首字母小写，其他单词首字母大写,每个空格分割的名称以动词开头。执行性的方法应该以动词开头，小写字母开头，返回性的方法应该以返回的内容开头，但之前不要加get。
 
@@ -246,13 +250,13 @@ displayName | 它是在用户界面中显示一个名称还是返回接收者的
 
 #### 4、类别命名
 
-命名方式：[类名+标识+扩展（大驼峰式）]
+<span style="color:#F00">命名方式</span>：[类名+标识+扩展（[大驼峰式](named_03)）]
 
 例：如果我们想要创建一个基于`NSString`的类别用于判断字符串类型，我们应该把类别放到名字是`NSString+JYJudgmentType`的文件里。`NSString`为要扩展的类名，`JY`为标识，`JudgmentType`为扩展的功能。
 
 #### 5、枚举的命名
 
-命名方式：[标识+功能（大驼峰式）]
+<span style="color:#F00">命名方式</span>：[标识+功能（[大驼峰式](named_03)）]
 
 类型命名：[枚举名+特征]
 
@@ -283,15 +287,16 @@ typedef NS_ENUM(NSInteger,JYJudgmentType){
 
 #### 6、const常量
 
-命名方式：[常量标识（项目开始前约定好）+`_`+功能（大驼峰式）]
+<span style="color:#F00">命名方式</span>：[大驼峰式](named_03)
 
-或者：[功能（大驼峰式）]
+如果一定想要和其它变量区分开来，也可以给他一个标识
 
-例如我们常用的`ReuseIdentifier`也可以规范成`const_ReuseIdentifier`
+最明显的例子就是我们常用的`ReuseIdentifier`
 
 #### 7、宏命名
 
-按照推荐  下划线命名+全部字母大写
+<span style="color:#F00">命名方式</span>：[下划线命名](named_04)+全部字母大写
+毕竟官方推荐命名方式
 例如系统的宏`__FILE__`
 我们也可以加上自己的标识用以和系统的宏区分开来`JY__FILE__`
 如果还要标识宏隶属于某一模块的话，还可以更进一步的加上模块的标识`JY__SQL__FILE__`
@@ -351,6 +356,49 @@ typedef NS_ENUM(NSInteger,JYJudgmentType){
 - 人机交互事件的设置
 
 基于此，希望至少在这一种类型封装上能形成规范，当然，能约定俗成是最好的了😄
+
+我就先抛砖引玉了：
+
+<span style="color:#F00">首先</span> 重写系统初始化方法，下面是把将普通的init方法和可视化的初始化方法重写，然后调用我们自己的初始化方法
+
+```
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    if (self = [super initWithFrame:frame]) {
+        [self commInit];
+    }
+    return self;
+}
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder
+{
+    if (self = [super initWithCoder:aDecoder]) {
+        [self commInit];
+    }
+    return self;
+}
+
+- (void)commInit
+{
+
+}
+
+- (void)theSubViewAdd
+{
+
+}
+
+- (void)theLayoutSet
+{
+    
+}
+
+- (void)theInterfaceEventSet
+{
+    
+}
+
+```
 
 ### 事件执行规范
 
