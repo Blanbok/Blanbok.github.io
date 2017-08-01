@@ -1,57 +1,190 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
-<head>
-  <link href="http://gmpg.org/xfn/11" rel="profile">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Objective-c Coding Standard</title>
+  <meta property="og:title" content="Objective-c Coding Standard" />
+  <meta name="twitter:title" content="Objective-c Coding Standard" />
+  <meta name="description" content="此次规范从当前的开发现状（风格各异）出发，奠基于当前的编码习惯，旨在规范大家的编程行为。 待到下次开会的时候，仍需依据自己的习惯，提出针对性的意见。后期将参考此次会上的意见进行修订。
+ 最近大佬要规范下团队里的编码规范，作为狗腿子的咱自然是要响应下号召咯&hellip;顺带的自己也想把规范定下来，后面一步步的修订，方便代码更新迭代。 还是想着能让自己代码更加的简洁、明了、具有表达力的😁 希望下次谁谁看代码的时候，不用特意去对照界面就能了解这是个做什么的。
+ [TOC]
+一、命名规范 我们所写的代码主要是为了阅读，其次才是被机器执行。所以我们要写：
+ 让别人能读懂的代码 可扩展的代码 可测试的代码(代码应该具备可测试性，对没有可测试性的代码写测试，是浪费生命的表现)  （一）、相关参考 1、RC原则  可读性高(Readable) 防止命名冲突(Conflict Name prevention)
+ 说到命名，就先来介绍下常用的命名方法：
+常用命名方法 （1）匈牙利命名： 开头字母用变量类型的缩写，其余部分用变量的英文或英文的缩写，要求单词第一个字母大写。
+int iMyAge; “i”是int类型的缩写； char cMyName[10]; “c”是char类型的缩写； float fManHeight; “f”是float类型的缩写；  
+（2）驼峰式命名法 又叫小驼峰式命名法。 第一个单词首字母小写，后面其他单词首字母大写。
+int myAge; char myName[10]; float manHeight;  
+（3）帕斯卡命名法 又叫大驼峰式命名法。 每个单词的第一个字母都大写。
+int MyAge; char MyName[10]; float ManHeight;  
+（4）下划线命名法 在命名中添加下划线用以标识 一般Object-C中建议我们在命名前加_，用以区分成员变量与其它变量的 在命名后加_，通常用在宏命名中 其它情况下在，_添加在标识不同含义的单词块之间用以区分
+int _myage; char my_name[10]; __FILE__  2、TEDC原则  简洁(Terse) 具有表达力(Expressive) 只做一件事(Do one thing)">
+  <meta property="og:description" content="此次规范从当前的开发现状（风格各异）出发，奠基于当前的编码习惯，旨在规范大家的编程行为。 待到下次开会的时候，仍需依据自己的习惯，提出针对性的意见。后期将参考此次会上的意见进行修订。
+ 最近大佬要规范下团队里的编码规范，作为狗腿子的咱自然是要响应下号召咯&hellip;顺带的自己也想把规范定下来，后面一步步的修订，方便代码更新迭代。 还是想着能让自己代码更加的简洁、明了、具有表达力的😁 希望下次谁谁看代码的时候，不用特意去对照界面就能了解这是个做什么的。
+ [TOC]
+一、命名规范 我们所写的代码主要是为了阅读，其次才是被机器执行。所以我们要写：
+ 让别人能读懂的代码 可扩展的代码 可测试的代码(代码应该具备可测试性，对没有可测试性的代码写测试，是浪费生命的表现)  （一）、相关参考 1、RC原则  可读性高(Readable) 防止命名冲突(Conflict Name prevention)
+ 说到命名，就先来介绍下常用的命名方法：
+常用命名方法 （1）匈牙利命名： 开头字母用变量类型的缩写，其余部分用变量的英文或英文的缩写，要求单词第一个字母大写。
+int iMyAge; “i”是int类型的缩写； char cMyName[10]; “c”是char类型的缩写； float fManHeight; “f”是float类型的缩写；  
+（2）驼峰式命名法 又叫小驼峰式命名法。 第一个单词首字母小写，后面其他单词首字母大写。
+int myAge; char myName[10]; float manHeight;  
+（3）帕斯卡命名法 又叫大驼峰式命名法。 每个单词的第一个字母都大写。
+int MyAge; char MyName[10]; float ManHeight;  
+（4）下划线命名法 在命名中添加下划线用以标识 一般Object-C中建议我们在命名前加_，用以区分成员变量与其它变量的 在命名后加_，通常用在宏命名中 其它情况下在，_添加在标识不同含义的单词块之间用以区分
+int _myage; char my_name[10]; __FILE__  2、TEDC原则  简洁(Terse) 具有表达力(Expressive) 只做一件事(Do one thing)">
+  <meta name="twitter:description" content="此次规范从当前的开发现状（风格各异）出发，奠基于当前的编码习惯，旨在规范大家的编程行为。 待到下次开会的时候，仍需依据自己的习惯，提出针对性的意见。后期将参考此次会上的意见进行修订。
+ 最近大佬要规范下团队里的编码规范，作为狗腿子的咱自然是要响应下号召咯&hellip;顺带的自己也想把规范定下来，后面一步步的修订，方便代码更新迭代。 还是想着能让自己代码更加的简洁、明了、具有表达力的😁 希望下次谁 …">
+  <meta name="author" content=""/>
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:url" content="https://blanbok.github.io/post/objective-c-coding-standard/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="BlanBok&#39;s blog" />
+
   <meta name="generator" content="Hugo 0.25.1" />
+  <link rel="canonical" href="https://blanbok.github.io/post/objective-c-coding-standard/" />
+  <link rel="alternate" href="https://blanbok.github.io/index.xml" type="application/rss+xml" title="BlanBok&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://blanbok.github.io/css/main.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="https://blanbok.github.io/css/pygment_highlights.css" />
+  <link rel="stylesheet" href="https://blanbok.github.io/css/highlight.min.css" />
 
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-  
-  <title>Objective-c Coding Standard &middot; BlanBok&#39;s blog</title>
-  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
 
-  
-  <link rel="stylesheet" href="https://blanbok.github.io/css/print.css" media="print">
-  <link rel="stylesheet" href="https://blanbok.github.io/css/poole.css">
-  <link rel="stylesheet" href="https://blanbok.github.io/css/syntax.css">
-  <link rel="stylesheet" href="https://blanbok.github.io/css/hyde.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
 
-  
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://blanbok.github.io/apple-touch-icon-144-precomposed.png">
-  <link rel="shortcut icon" href="https://blanbok.github.io/favicon.png">
 
-  
-  <link href="" rel="alternate" type="application/rss+xml" title="BlanBok&#39;s blog" />
-</head>
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
 
-<body class=" ">
-  <div class="sidebar">
-  <div class="container sidebar-sticky">
-    <div class="sidebar-about">
-      <a href="https://blanbok.github.io/"><h1>BlanBok&#39;s blog</h1></a>
-      <p class="lead">
-       my little blog 
-      </p>
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
     </div>
-
-    <ul class="sidebar-nav">
-      <li><a href="https://blanbok.github.io/">Home</a> </li>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
       
-    </ul>
-
-    <p>&copy; 2017. All rights reserved. </p>
-  </div>
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
 </div>
 
+</head>
 
-  <div class="content container">
-    <div class="post">
-      <h1>Objective-c Coding Standard</h1>
-      <span class="post-date">Tue, Aug 1, 2017</span>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://blanbok.github.io">BlanBok&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
       
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Objective-c Coding Standard</h1>
+                
+                
+                  <span class="post-meta">
+  Posted on August 1, 2017
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
 
 <p>此次规范从当前的开发现状（风格各异）出发，奠基于当前的编码习惯，旨在规范大家的编程行为。
 待到下次开会的时候，仍需依据自己的习惯，提出针对性的意见。后期将参考此次会上的意见进行修订。</p>
@@ -368,10 +501,10 @@ __FILE__
 
 <p>方法名应遵守小驼峰原则，首字母小写，其他单词首字母大写,每个空格分割的名称以动词开头。执行性的方法应该以动词开头，小写字母开头，返回性的方法应该以返回的内容开头，但之前不要加get。</p>
 
-<p>方法名应具备以下特征：</p>
+<p>方法名应具备以下特征
+#####（1）表达力、简洁</p>
 
-<p>#####（1）表达力、简洁
-方法名应该是简洁并具有表达力，去除参数之后能形成可读的自然语言
+<p>方法名应该是简洁并具有表达力，去除参数之后能形成可读的自然语言
 当这二者需要取舍，应该<a href="#TEDC_01">着重强调表达力</a></p>
 
 <p>例如：</p>
@@ -645,9 +778,11 @@ __FILE__
 
 <h5 id="2-提取类-方法">（2）提取类/方法</h5>
 
-<p>适用于以下类：
-❶ 与其它类能共用相同的逻辑
-❷ 与其它类在架构上一定的相似性</p>
+<p>适用于以下类：</p>
+
+<p>❶ 与其它类能共用相同的逻辑</p>
+
+<p>❷ 与其它类在架构上一定的相似性</p>
 
 <p>对于这些类可以提取出<span style="color:#F00">专门处理公有逻辑的新类</span>或<span style="color:#F00">架构相似的父类</span>为其减负。</p>
 
@@ -735,10 +870,61 @@ __FILE__
 
 <p><a href="http://blog.csdn.net/justinjing0612/article/details/41311577">代码重构意义和方法</a></p>
 
+      </article>
+
+      <ul class="pager blog-pager">
+        
+        
+      </ul>
+
+      
+
     </div>
+  </div>
+</div>
 
-			
-		</div>
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+          &nbsp;&bull;&nbsp;
+          2017
 
-</body>
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://blanbok.github.io">BlanBok&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.25.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://blanbok.github.io/js/main.js"></script>
+<script src="https://blanbok.github.io/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="/js/load-photoswipe.js"></script>
+
+
+
+  </body>
 </html>
+
