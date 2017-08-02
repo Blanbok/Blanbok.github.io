@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on BlanBok&#39;s blog</title>
-    <link>http://blanbok.github.io/post/</link>
+    <link>https://blanbok.github.io/post/</link>
     <description>Recent content in Posts on BlanBok&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Tue, 01 Aug 2017 08:43:28 +0800</lastBuildDate>
     
-	<atom:link href="http://blanbok.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blanbok.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Objective-c Coding Standard</title>
-      <link>http://blanbok.github.io/post/objective-c-coding-standard/</link>
+      <link>https://blanbok.github.io/post/objective-c-coding-standard/</link>
       <pubDate>Tue, 01 Aug 2017 08:43:28 +0800</pubDate>
       
-      <guid>http://blanbok.github.io/post/objective-c-coding-standard/</guid>
+      <guid>https://blanbok.github.io/post/objective-c-coding-standard/</guid>
       <description>此次规范从当前的开发现状（风格各异）出发，奠基于当前的编码习惯，旨在规范大家的编程行为。 待到下次开会的时候，仍需依据自己的习惯，提出针对性的</description>
     </item>
     
