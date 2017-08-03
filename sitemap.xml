@@ -3,34 +3,23 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://blanbok.github.io/about/an-impromptu-story/</loc>
-    <lastmod>2017-08-02T11:04:38+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blanbok.github.io/contact/</loc>
-    <lastmod>2017-08-02T11:04:38+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blanbok.github.io/tags/</loc>
-    <lastmod>2017-08-02T11:04:38+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blanbok.github.io/post/objective-c-coding-standard/</loc>
-    <lastmod>2017-08-01T08:43:28+08:00</lastmod>
+    <lastmod>2017-08-03T11:07:23+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://blanbok.github.io/about/</loc>
-    <lastmod>2017-08-02T11:04:38+08:00</lastmod>
-    <priority>0</priority>
+    <lastmod>2017-08-02T08:43:28+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blanbok.github.io/tags/</loc>
+    <lastmod>2017-08-02T08:43:28+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://blanbok.github.io/</loc>
-    <lastmod>2017-08-02T11:04:38+08:00</lastmod>
+    <lastmod>2017-08-03T11:07:23+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -40,25 +29,20 @@
   </url>
   
   <url>
-    <loc>https://blanbok.github.io/contact/</loc>
-    <lastmod>2017-08-02T11:04:38+08:00</lastmod>
+    <loc>https://blanbok.github.io/tags/development/</loc>
+    <lastmod>2017-08-02T08:43:28+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blanbok.github.io/tags/golang/</loc>
+    <lastmod>2017-08-02T08:43:28+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://blanbok.github.io/post/</loc>
-    <lastmod>2017-08-01T08:43:28+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blanbok.github.io/tags/</loc>
-    <lastmod>2017-08-02T11:04:38+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blanbok.github.io/tags/</loc>
+    <lastmod>2017-08-03T11:07:23+08:00</lastmod>
     <priority>0</priority>
   </url>
   
