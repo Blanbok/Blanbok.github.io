@@ -6,18 +6,18 @@
     <description>Recent content in Development on BlanBok&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 02 Aug 2017 08:43:28 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 03 Aug 2017 11:07:23 +0800</lastBuildDate>
     
 	<atom:link href="https://blanbok.github.io/tags/development/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>About</title>
-      <link>https://blanbok.github.io/tags/</link>
-      <pubDate>Wed, 02 Aug 2017 08:43:28 +0800</pubDate>
+      <title>Objective-c Coding Standard</title>
+      <link>https://blanbok.github.io/post/objective-c-coding-standard/</link>
+      <pubDate>Thu, 03 Aug 2017 11:07:23 +0800</pubDate>
       
-      <guid>https://blanbok.github.io/tags/</guid>
-      <description>&amp;emsp;&amp;emsp;前段时间在简书上看到一篇很有意思的文章，是简书知名博主彭小六所作。虽说是觉着耳目一新啦，但也就粗略瞄了几下。 &amp;ems &amp;em</description>
+      <guid>https://blanbok.github.io/post/objective-c-coding-standard/</guid>
+      <description>此次规范从当前的开发现状（风格各异）出发，奠基于当前的编码习惯，旨在规范大家的编程行为。 待到下次开会的时候，仍需依据自己的习惯，提出针对性的</description>
     </item>
     
   </channel>
