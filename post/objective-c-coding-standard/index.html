@@ -44,8 +44,8 @@
                     </h1>
                     <h2 class="headline">
                     Aug 3, 2017 11:07
-                    · 6366 words
-                    · 13 minutes read
+                    · 6735 words
+                    · 14 minutes read
                       <span class="tags">
                       
                       
@@ -72,7 +72,7 @@
 
 <hr />
 
-<p>[TOC]</p>
+<!--[TOC]-->
 
 <h1 id="一-命名规范">一、命名规范</h1>
 
@@ -274,7 +274,7 @@ __FILE__
 
 <h5 id="1-一般变量命名">（1）一般变量命名</h5>
 
-<p><span style="color:#F00">命名方式</span>：[小写类型前缀+<code>_</code>+介绍<a href="named_02">小驼峰式</a>]的做法。【介绍尽量用自然语言表达自己的意思。】</p>
+<p><span style="color:#F00">命名方式</span>：[小写类型前缀+<code>_</code>+介绍<a href="#named_02">小驼峰式</a>]的做法。【介绍尽量用自然语言表达自己的意思。】</p>
 
 <p>于个人而言，变量名使用更多的是下划线加驼峰式的命名，尽量用自然语言命名自己的变量</p>
 
@@ -436,13 +436,13 @@ __FILE__
 
 <h4 id="4-类别命名">4、类别命名</h4>
 
-<p><span style="color:#F00">命名方式</span>：[类名+标识+扩展（<a href="named_03">大驼峰式</a>）]</p>
+<p><span style="color:#F00">命名方式</span>：[类名+标识+扩展（<a href="#named_03">大驼峰式</a>）]</p>
 
 <p>例：如果我们想要创建一个基于<code>NSString</code>的类别用于判断字符串类型，我们应该把类别放到名字是<code>NSString+JYJudgmentType</code>的文件里。<code>NSString</code>为要扩展的类名，<code>JY</code>为标识，<code>JudgmentType</code>为扩展的功能。</p>
 
 <h4 id="5-枚举的命名">5、枚举的命名</h4>
 
-<p><span style="color:#F00">命名方式</span>：[标识+功能（<a href="named_03">大驼峰式</a>）]</p>
+<p><span style="color:#F00">命名方式</span>：[标识+功能（<a href="#named_03">大驼峰式</a>）]</p>
 
 <p>类型命名：[枚举名+特征]</p>
 
@@ -472,7 +472,7 @@ __FILE__
 
 <h4 id="6-const常量">6、const常量</h4>
 
-<p><span style="color:#F00">命名方式</span>：<a href="named_03">大驼峰式</a></p>
+<p><span style="color:#F00">命名方式</span>：<a href="#named_03">大驼峰式</a></p>
 
 <p>如果一定想要和其它变量区分开来，也可以给他一个标识</p>
 
@@ -480,7 +480,7 @@ __FILE__
 
 <h4 id="7-宏命名">7、宏命名</h4>
 
-<p><span style="color:#F00">命名方式</span>：<a href="named_04">下划线命名</a>+全部字母大写
+<p><span style="color:#F00">命名方式</span>：<a href="#named_04">下划线命名</a>+全部字母大写
 毕竟官方推荐命名方式
 例如系统的宏<code>__FILE__</code>
 我们也可以加上自己的标识用以和系统的宏区分开来<code>JY__FILE__</code>
@@ -720,8 +720,6 @@ __FILE__
 
 <p>终归还是<a href="https://github.com/">Github</a>最通用</p>
 
-<p><span style="font-size:3rem">END</span></p>
-
 <h1 id="五-项目的基本架构">五、项目的基本架构</h1>
 
 <pre><code>    ├── &lt;Supporting Files&gt;(放置预编译文件、系统配置文件和`APPDelegate.*`类)
@@ -752,7 +750,31 @@ __FILE__
 
 <p>对于些系统的配置文件 <code>Info.plist</code>、<code>InfoPlist.strings</code>和预编译的文件<code>.pch</code>、<code>header File</code>以及<code>main.m</code>主函数。</p>
 
-<p>通常我们在项目创建之后，对这些文件的访问频率都会很低的，因此可以将它们都放做一块，方便之后访问。</p>
+<p>通常我们在项目创建之后，对这些文件的访问频率都会很低的，因此可以将它们都放做一块，统一管理。</p>
+
+<h3 id="3-utils">3、Utils</h3>
+
+<p>对于适用性很小，仅在当前项目中通用的工具类。我们统一放在Utils类目下，分门别类的列出来。</p>
+
+<h3 id="4-basecontroller">4、BaseController</h3>
+
+<p>放置控制器的基类，方能统一管理控制器的各项特征。</p>
+
+<p>项目中应该是尽量少的创建基类，否则项目内部模块的耦合性会达到自己都不能理清的地步。</p>
+
+<h3 id="4-tabbarcontroller">4、TabBarController</h3>
+
+<p>对于窗口的根控制器，它的位置是有点尴尬。作为一个控制器，它应该放在<code>CodeClass</code>里面，但这样也将这类目强行加了一层。作为一个创建之后就确定的，不会轻易改变的类，它也可以放置在<code>Supporting Files</code>里。</p>
+
+<p>既然都不好下决定，索性就新开一层，专门放置好了。</p>
+
+<h3 id="5-codeclass">5、CodeClass</h3>
+
+<p>项目构建的实际结构，按照界面层次逐层的创建下去。</p>
+
+<p>其内部构架就按经典<code>MVC</code>，分类的文件夹直接标以<code>M</code>、<code>V</code>、<code>C</code>，对模块的构架就一目了然了。</p>
+
+<p>&mdash; <span style="font-size:2rem">END</span> &mdash;</p>
 
 <h1 id="references">References</h1>
 
@@ -777,6 +799,8 @@ __FILE__
 <p><a href="http://www.jianshu.com/p/395700466a7b">iOS项目重构周记（一）</a></p>
 
 <p><a href="http://blog.csdn.net/justinjing0612/article/details/41311577">代码重构意义和方法</a></p>
+
+<p><a href="http://www.cnblogs.com/wujy/p/5104111.html">IOS整体项目层级构建</a></p>
 
                 </section>
             </article>
