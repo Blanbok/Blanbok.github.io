@@ -44,8 +44,8 @@
                     </h1>
                     <h2 class="headline">
                     Aug 3, 2017 11:07
-                    · 5561 words
-                    · 12 minutes read
+                    · 6366 words
+                    · 13 minutes read
                       <span class="tags">
                       
                       
@@ -721,6 +721,38 @@ __FILE__
 <p>终归还是<a href="https://github.com/">Github</a>最通用</p>
 
 <p><span style="font-size:3rem">END</span></p>
+
+<h1 id="五-项目的基本架构">五、项目的基本架构</h1>
+
+<pre><code>    ├── &lt;Supporting Files&gt;(放置预编译文件、系统配置文件和`APPDelegate.*`类)
+    ├── &lt;Utils&gt;（适用于本项目的自定义类库。根据功能可以细分下去。例如：UI类、Data类、Net类）
+    ├── &lt;BaseController&gt;（控制器的基类，方能统一管理控制器的各项特征）
+    ├── &lt;TabBarController&gt;（窗口根控制器）
+    ├── &lt;CodeClass&gt;（项目真正的构建内容）
+    └── &lt;Pods（或Carthage）&gt;工程（第三方SDK以及自己做的小工具）
+</code></pre>
+
+<p>在XCode上创建时，如果有个比较清晰的层级构建，将对以后的项目维护和功能的拓展很有帮助。</p>
+
+<p>这次，将简要描述对项目层级的拙见。</p>
+
+<h3 id="1-cocoapods">1、CocoaPods</h3>
+
+<p>关于第三方的工具，想必大家现在都用的是第三方的管理工具来进行集成。比较出名的就是<code>CocoaPods</code>和<code>Carthage</code>，惭愧的是咱还完全没了解过<code>Carthage</code>（懒过头了点 ..😄）。所以唯一能说的也就是<code>CocoaPods</code>了。</p>
+
+<p><code>Pods</code>不仅仅只是用来集成别人的工具，也是能用管理、集成自己的工具。</p>
+
+<p>别怕自己的代码放到<a href="https://github.com/">Github</a>上被人笑话，传上去的初衷是为了便利自己而已，其它什么的都是添头。</p>
+
+<p>想想，你做了个小工具，之后创建好几个项目的时候都是一个个拖进去，之后可能发现其中的逻辑出来了致命的bug。难道优化之后，还得一个个的项目拖过去？</p>
+
+<p>省省把，工具本来就是帮我们提升开发效率的，你却将这么强大的功能弃置不顾，仅仅把它作为一个便利的获取轮子的工具，确实该自省了！</p>
+
+<h3 id="2-supporting-files">2、Supporting Files</h3>
+
+<p>对于些系统的配置文件 <code>Info.plist</code>、<code>InfoPlist.strings</code>和预编译的文件<code>.pch</code>、<code>header File</code>以及<code>main.m</code>主函数。</p>
+
+<p>通常我们在项目创建之后，对这些文件的访问频率都会很低的，因此可以将它们都放做一块，方便之后访问。</p>
 
 <h1 id="references">References</h1>
 
