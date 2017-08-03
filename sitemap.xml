@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://blanbok.github.io/post/development/code-encapsulation/</loc>
+    <lastmod>2017-08-03T18:42:45+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blanbok.github.io/post/project/one-project-one-plan/</loc>
     <lastmod>2017-08-03T17:33:02+08:00</lastmod>
   </url>
@@ -23,7 +28,7 @@
   </url>
   
   <url>
-    <loc>https://blanbok.github.io/post/objective-c-coding-standard/</loc>
+    <loc>https://blanbok.github.io/post/development/objective-c-coding-standard/</loc>
     <lastmod>2017-08-03T11:07:23+08:00</lastmod>
   </url>
   
@@ -39,7 +44,7 @@
   
   <url>
     <loc>https://blanbok.github.io/</loc>
-    <lastmod>2017-08-03T17:33:02+08:00</lastmod>
+    <lastmod>2017-08-03T18:42:45+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -50,7 +55,7 @@
   
   <url>
     <loc>https://blanbok.github.io/tags/development/</loc>
-    <lastmod>2017-08-03T11:07:23+08:00</lastmod>
+    <lastmod>2017-08-03T18:42:45+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -62,7 +67,7 @@
   
   <url>
     <loc>https://blanbok.github.io/post/</loc>
-    <lastmod>2017-08-03T17:33:02+08:00</lastmod>
+    <lastmod>2017-08-03T18:42:45+08:00</lastmod>
     <priority>0</priority>
   </url>
   
