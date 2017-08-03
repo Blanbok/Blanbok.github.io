@@ -6,10 +6,19 @@
     <description>Recent content on BlanBok&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 03 Aug 2017 16:48:42 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 03 Aug 2017 17:33:02 +0800</lastBuildDate>
     
 	<atom:link href="https://blanbok.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>One Project One Plan</title>
+      <link>https://blanbok.github.io/post/project/one-project-one-plan/</link>
+      <pubDate>Thu, 03 Aug 2017 17:33:02 +0800</pubDate>
+      
+      <guid>https://blanbok.github.io/post/project/one-project-one-plan/</guid>
+      <description>Daily income is recorded by a small project each day 起初，我是为了学习Swift仿着30DaysofSwift而开始自己的My30DaysofSwift-4.0,之后过了一</description>
+    </item>
     
     <item>
       <title>Benchmarking</title>
