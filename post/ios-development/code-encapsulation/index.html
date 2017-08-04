@@ -1,0 +1,284 @@
+    <!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="author" content="OComme">
+		<meta name="description" content="Some personal talk about development is about everyday thinking">
+		<meta name="generator" content="Hugo 0.25.1" />
+		<title>Code Encapsulation &middot; OComme&#39;s blog</title>
+		<link rel="shortcut icon" href="https://ocomme.github.io/images/favicon.ico">
+		<link rel="stylesheet" href="https://ocomme.github.io/css/style.css">
+		<link rel="stylesheet" href="https://ocomme.github.io/css/highlight.css">
+		
+
+		
+		<link rel="stylesheet" href="https://ocomme.github.io/css/font-awesome.min.css">
+		
+
+		
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='https://ocomme.github.io/'> <span class="arrow">←</span>Home</a>
+	
+	<a href='https://ocomme.github.io/post'>Archive</a>
+	<a href='https://ocomme.github.io/tags'>Tags</a>
+	<a href='https://ocomme.github.io/about'>Novel</a>
+
+	
+
+	
+</nav>
+
+
+        <section id="wrapper">
+            <article class="post">
+                <header>
+                    <h1>
+                        Code Encapsulation
+                    </h1>
+                    <h2 class="headline">
+                    Aug 4, 2017 23:06
+                    · 1882 words
+                    · 4 minutes read
+                      <span class="tags">
+                      
+                      
+                          
+                              <a href="https://ocomme.github.io/tags/ios-development">iOS-Development</a>
+                          
+                      
+                      
+                      </span>
+                    </h2>
+                </header>
+                
+                <section id="post-body">
+                    
+
+<p>前段时间应为工作需求，也是为了自身的规划，初步列出了<a href="https://ocomme.github.io/post/ios-development/objective-c-coding-standard/">iOS的一些编码规范</a>。</p>
+
+<p>里面有自己的经验，也有许多网上找来的资料，整理了一圈下来反而发现自己需要改进的地方更多了。</p>
+
+<p>刚好这段时间加深了对<code>MVVM</code><sup class="footnote-ref" id="fnref:MVVM"><a rel="footnote" href="#fn:MVVM">1</a></sup>的理解，觉察到项目中使用响应者链<sup class="footnote-ref" id="fnref:responder-chain"><a rel="footnote" href="#fn:responder-chain">2</a></sup>对解耦的强化。</p>
+
+<p>也就顺势对代码的封装进行深入探究。</p>
+
+<p><span style="color:#F00;font-size:3rem">以下是前期导入的资料，整理的话还是需要放到明天了，不说多了，先来一杯🍺</span></p>
+
+<h1 id="一-了解好代码">一、了解好代码</h1>
+
+<h2 id="一-好代码的特点">(一)、好代码的特点</h2>
+
+<h3 id="1-性能良好">1、性能良好</h3>
+
+<ul>
+<li>运算速度快</li>
+</ul>
+
+<p>选用时间空间复杂度更好的算法，避免常见的性能陷阱。</p>
+
+<ul>
+<li>占用资源少</li>
+</ul>
+
+<p>更好的抽象，选用更加适合的方案，数据结构，类定义等</p>
+
+<h3 id="2-维护容易">2、维护容易</h3>
+
+<p>快速调整和纠错能力</p>
+
+<ul>
+<li>分治-清晰的模块化</li>
+<li>解耦-每个模块各司其责，避免相互接触</li>
+<li>明确的输入和输出</li>
+<li>全覆盖的log</li>
+</ul>
+
+<h3 id="3-拓展方便">3、拓展方便</h3>
+
+<p>事情之初，管理好差异性，让新增功能变得容易，尽可能的只做差异性的支持的新增，避免原先功能的改动。</p>
+
+<h3 id="4-复用性好">4、复用性好</h3>
+
+<ul>
+<li>重复的事情尽可能只做一遍，抽象共性。</li>
+<li>避免差异性陷阱通用接口的模块化，通过差异性和共性分析提取接口</li>
+<li>熟悉设计模式</li>
+</ul>
+
+<h3 id="5-健壮性好">5、健壮性好</h3>
+
+<ul>
+<li>充分考虑输入情况，避免流程中途出现crash，清晰的输入和输出情况，避免缺漏。</li>
+<li>自动化的单元测试，确保基线功能完备</li>
+</ul>
+
+<h2 id="二-代码的优化点">(二)、代码的优化点</h2>
+
+<ul>
+<li>代码可以视为“数据+逻辑”</li>
+<li>逻辑抓牢“输入+输出”</li>
+<li>通过数据+逻辑的封装，形成对象的自维护，进而达成大问题的良好共治</li>
+</ul>
+
+<p>代码常见的问题</p>
+
+<ol>
+<li>类同代码</li>
+<li>纯过程式代码</li>
+<li>杂乱缺乏封装</li>
+<li>复用性不好</li>
+<li>代码耦合</li>
+<li>硬编码，魔数</li>
+<li>过大的类和方法</li>
+</ol>
+
+<h1 id="二-关于封装">二、关于封装</h1>
+
+<p>理解封装，那就要先来了解封装的定义和原则，以此才能了解到我们是否做到了正确的封装、是否通过封装对代码进行了优化。</p>
+
+<p><strong>封装</strong>，作为面向对象的三大特征之一，在搜索引擎下能获取到这样的定义：“把复杂度隐藏于实体内部，对外提供简单，精练的访问接口。”</p>
+
+<p>这个原则普遍存在于社会生活中，也可以理解为“大道至简”的一种体现。</p>
+
+<p><strong>封装</strong>，更多的是可变性的封装<sup class="footnote-ref" id="fnref:Encapsulation-changeable"><a rel="footnote" href="#fn:Encapsulation-changeable">3</a></sup>。</p>
+
+<p>换言之，在你的设计中什么可能会发生变化，应使之成为抽象层而封装，而不是什么会导致设计改变才封装。</p>
+
+<h3 id="1-封装的目的">1、封装的目的</h3>
+
+<ol>
+<li>隐藏类的实现细节，降低使用复杂度。</li>
+<li>使使用者只能通过事先预定的方法来访问数据,从而可以在该方法里加入控制逻辑,限制对成员变量的不合理访问。</li>
+<li>可进行数据检查,有利于保证对象信息的完整性。</li>
+<li>便于修改。提高代码可维护性。</li>
+</ol>
+
+<h3 id="1-解决的问题">1、解决的问题</h3>
+
+<h3 id="2-封装的优点">2、封装的优点</h3>
+
+<p>知道了封装的目的，那我们也要来列下封装的优点，这对优化和应用自己的封装很有帮助。</p>
+
+<ol>
+<li>代码逻辑结构更加清晰。</li>
+<li>冗余代码量减少，更加清爽。</li>
+<li>维护量较低，符合&rdquo;对扩展开放，对修改关闭&rdquo;的软件架构思想。</li>
+<li>提升开发效率</li>
+</ol>
+
+<h3 id="3-封装的原则">3、封装的原则</h3>
+
+<ol>
+<li>单一职责原则</li>
+<li>接口职责单一原则</li>
+<li>开放封闭原则<sup class="footnote-ref" id="fnref:open-close"><a rel="footnote" href="#fn:open-close">4</a></sup></li>
+<li>里氏替换原则<sup class="footnote-ref" id="fnref:replace"><a rel="footnote" href="#fn:replace">5</a></sup></li>
+<li>依赖倒置原则<sup class="footnote-ref" id="fnref:depend"><a rel="footnote" href="#fn:depend">6</a></sup></li>
+<li>接口隔离原则<sup class="footnote-ref" id="fnref:isolation"><a rel="footnote" href="#fn:isolation">7</a></sup></li>
+</ol>
+
+<h3 id="4-访问控制符">4、访问控制符</h3>
+
+<p>封装需要使用 <code>objective-c</code> 提供的4个访问控制符：<code>@private</code>,<code>@package</code>,<code>@protected</code>和<code>@public</code>。它们分别代表了4个访问控制级别。</p>
+
+<ol>
+<li><code>@private</code>：【当前类访问权限】,只能在当前类内部被访问。用于彻底隐藏成员变量。类的实现部分定义的成员变量相当于默认用这种访问权限。</li>
+<li><code>@package</code>：【与映像访问权限相同】用于部分隐藏成员变量。如果类的成员变量使用<code>@package</code> 访问控制符来限制,则这个成员可以在当前类及当前类实现的同一个映像的任意地方访问。</li>
+<li><code>@protected</code>：【子类访问权限】用于部分隐藏成员变量。如果类的成员变量使用<code>@protected</code> 访问控制符来限制,则这个成员可以在当前类,当前类的子类的任意地方访问。在类的接口部分定义的成员变量默认使用这种访问权限。</li>
+</ol>
+
+<p><code>@private</code>,<code>@package</code>,<code>@protected</code>和<code>@public</code>,这4个权限控制符的作用范围是这样的,从它们出现的位置开始,到下一个权限控制符出现或右边花括号之间的成员变量,都受到该访问权限控制符的控制。</p>
+
+<h1 id="references">References</h1>
+
+<p><a href="http://www.cocoachina.com/special/20160224/15425.html">浅谈MVVM(View-ViewManger-C-ViewModel-Model)</a></p>
+
+<p><a href="https://wenku.baidu.com/view/bf47587eba1aa8114531d900.html">程序封装思想和常见原则</a></p>
+
+<p><a href="http://www.2cto.com/kf/201509/443782.html">IOS 开发学习总结objective-c面向对象之——封装和访问控制符</a></p>
+
+<p><a href="http://www.jianshu.com/p/1ea86b79cbfb">iOS封装浅析</a></p>
+
+<p><a href="http://www.cnblogs.com/leixu/p/5287313.html">iOS常用的封装方法</a></p>
+
+<p><a href="http://www.cnblogs.com/feng9exe/p/5592494.html">对可变性的封装原则</a></p>
+
+<p><a href="http://blog.csdn.net/suncherrydream/article/details/38982299">我所认识的软件开发原则：封装</a></p>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:MVVM">MVVM，全称是 Model-View-ViewModel，是模型 (model)－视图 (view)－视图和模型的绑定 (ViewModel) 的缩写。它表示的是经典MVC模式的一种优化方向。
+ <a class="footnote-return" href="#fnref:MVVM"><sup>[return]</sup></a></li>
+<li id="fn:responder-chain">响应者链：成为处理事件的响应者的先后顺序链。
+ <a class="footnote-return" href="#fnref:responder-chain"><sup>[return]</sup></a></li>
+<li id="fn:Encapsulation-changeable">可变性的封装：找到一个系统的可变因素，对其封装。
+ <a class="footnote-return" href="#fnref:Encapsulation-changeable"><sup>[return]</sup></a></li>
+<li id="fn:open-close">开放封闭原则：对修改关闭对拓展开放
+ <a class="footnote-return" href="#fnref:open-close"><sup>[return]</sup></a></li>
+<li id="fn:replace">里氏替换原则：可以通过接口来调用字类
+ <a class="footnote-return" href="#fnref:replace"><sup>[return]</sup></a></li>
+<li id="fn:depend">依赖倒置原则：尽可能依赖底层接口
+ <a class="footnote-return" href="#fnref:depend"><sup>[return]</sup></a></li>
+<li id="fn:isolation">接口隔离原则：接口的方法要尽可能的少，避免万金油接口
+ <a class="footnote-return" href="#fnref:isolation"><sup>[return]</sup></a></li>
+</ol>
+</div>
+
+                </section>
+            </article>
+
+            
+
+            
+
+            
+
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="https://github.com/OComme">
+        <i class="fa fa-github-square"></i>
+    </a>
+    
+
+
+</div>
+
+    
+    <p class="small">
+    
+       © Copyright 2017 <i class="fa fa-heart" aria-hidden="true"></i> OComme
+    
+    </p>
+    <p class="small">
+        Powered by <a href="http://www.gohugo.io/">Hugo</a> Theme By <a href="https://github.com/nodejh/hugo-theme-cactus-plus">nodejh</a>
+    </p>
+</footer>
+
+        </section>
+
+        <script src="https://ocomme.github.io/js/jquery-2.2.4.min.js"></script>
+<script src="https://ocomme.github.io/js/main.js"></script>
+<script src="https://ocomme.github.io/js/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+    </body>
+</html>
