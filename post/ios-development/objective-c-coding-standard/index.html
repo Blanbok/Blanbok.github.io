@@ -44,7 +44,7 @@
                     </h1>
                     <h2 class="headline">
                     Aug 6, 2017 22:20
-                    · 8187 words
+                    · 8069 words
                     · 17 minutes read
                       <span class="tags">
                       
@@ -835,15 +835,9 @@ __FILE__
 
 <h3 id="2-逻辑调试">(2) 逻辑调试</h3>
 
-<p><code>Objective-C</code>中使用最多的是两对断言, NSAssert/NSCAssert 和 NSParameterAssert/NSCparameterAssert.</p>
+<p>断言作为<code>Objective-C</code>中居重要地位的调试工具，还是推荐大家多多使用的。</p>
 
-<p>几者的区别可以通过定义看出来</p>
-
-<p><code>NSAssert</code>、<code>NSParameterAssert</code>适用于<code>Objective-C</code>,</p>
-
-<p><code>NSCAssert</code>、<code>NSCparameterAssert</code>适用于<code>C</code></p>
-
-<p><code>NSAssert/NSCAssert</code> 和 <code>NSParameterAssert/NSCparameterAssert</code> 的区别是前者是所有断言, 后者只是针对参数是否存在的断言, 所以可以先进行参数的断言,确认参数是正确的,再进行所有的断言,确认其他原因.</p>
+<p>网上关于断言使用的介绍很多，这里也就不一一叙述了。</p>
 
 <p>由于Xcode 已经默认将<code>release</code>环境下的断言取消了, 免除了忘记关闭断言造成的程序不稳定.</p>
 
