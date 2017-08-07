@@ -17,7 +17,7 @@
 
 ![对标管理](./Assets/BenchmarkingManagement.png)
 
-# 2、[三个问题](./DetailInformation/ThreeQuestions.md)
+# 2、三个问题
 > 写下每天的问题来思考如何改善我的行为
 
 ![三个问题](./Assets/ThreeQuestions.png)
