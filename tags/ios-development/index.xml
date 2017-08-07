@@ -20,14 +20,5 @@
       <description>此次规范从当前的开发现状（风格各异）出发，奠基于当前的编码习惯，旨在规范大家的编程行为。 待到下次开会的时候，仍需依据自己的习惯，提出针对性的</description>
     </item>
     
-    <item>
-      <title>Code Encapsulation</title>
-      <link>https://ocomme.github.io/post/ios-development/code-encapsulation/</link>
-      <pubDate>Mon, 07 Aug 2017 18:48:45 +0800</pubDate>
-      
-      <guid>https://ocomme.github.io/post/ios-development/code-encapsulation/</guid>
-      <description>前段时间应为工作需求，也是为了自身的规划，初步列出了iOS的一些编码规范。 里面有自己的经验，也有许多网上找来的资料，整理了一圈下来反而发现自</description>
-    </item>
-    
   </channel>
 </rss>
