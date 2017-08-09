@@ -6,10 +6,19 @@
     <description>Recent content in Posts on OComme&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 07 Aug 2017 18:50:23 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 09 Aug 2017 16:21:23 +0800</lastBuildDate>
     
 	<atom:link href="https://ocomme.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>JavaScript Study Note</title>
+      <link>https://ocomme.github.io/post/js-study/javascript-study-note/</link>
+      <pubDate>Wed, 09 Aug 2017 16:21:23 +0800</pubDate>
+      
+      <guid>https://ocomme.github.io/post/js-study/javascript-study-note/</guid>
+      <description>刚开始学习，也不敢太贪进，便从初级的教材《JavaScript从入门到精通（第2版）》开始学起。 首先接触的，自然是熟悉的“Hello Worl</description>
+    </item>
     
     <item>
       <title>Objective-c Coding Standard</title>

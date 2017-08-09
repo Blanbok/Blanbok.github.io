@@ -6,10 +6,19 @@
     <description>Recent content on OComme&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 07 Aug 2017 18:50:23 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 09 Aug 2017 16:21:23 +0800</lastBuildDate>
     
 	<atom:link href="https://ocomme.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>JavaScript Study Note</title>
+      <link>https://ocomme.github.io/post/js-study/javascript-study-note/</link>
+      <pubDate>Wed, 09 Aug 2017 16:21:23 +0800</pubDate>
+      
+      <guid>https://ocomme.github.io/post/js-study/javascript-study-note/</guid>
+      <description>刚开始学习，也不敢太贪进，便从初级的教材《JavaScript从入门到精通（第2版）》开始学起。 首先接触的，自然是熟悉的“Hello Worl</description>
+    </item>
     
     <item>
       <title>Objective-c Coding Standard</title>
@@ -54,6 +63,15 @@
       
       <guid>https://ocomme.github.io/post/note/skilltree/</guid>
       <description>总结自己开发中需要的知识，便是形成自己的技能树体系了。 参考下自己与别人的技能树分枝的不同也能知道哪些方面自己缺失的 1. 常用语言 Swift Object-C 2. 使用过的系</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://ocomme.github.io/about/novel/</link>
+      <pubDate>Wed, 02 Aug 2017 08:43:28 +0800</pubDate>
+      
+      <guid>https://ocomme.github.io/about/novel/</guid>
+      <description>&amp;emsp;&amp;emsp;前段时间在简书上看到一篇很有意思的文章，是简书知名博主彭小六所作。虽说是觉着耳目一新啦，但也就粗略瞄了几下。 &amp;ems</description>
     </item>
     
   </channel>

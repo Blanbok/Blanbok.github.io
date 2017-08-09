@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://ocomme.github.io/post/js-study/javascript-study-note/</loc>
+    <lastmod>2017-08-09T16:21:23+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://ocomme.github.io/post/ios-development/objective-c-coding-standard/</loc>
     <lastmod>2017-08-07T18:50:23+08:00</lastmod>
   </url>
@@ -28,12 +33,17 @@
   </url>
   
   <url>
-    <loc>https://ocomme.github.io/about/</loc>
+    <loc>https://ocomme.github.io/about/novel/</loc>
     <lastmod>2017-08-02T08:43:28+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://ocomme.github.io/tags/</loc>
+    <lastmod>2017-08-02T08:43:28+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ocomme.github.io/about/</loc>
     <lastmod>2017-08-02T08:43:28+08:00</lastmod>
   </url>
   
@@ -49,6 +59,12 @@
   </url>
   
   <url>
+    <loc>https://ocomme.github.io/tags/javascript-study/</loc>
+    <lastmod>2017-08-09T16:21:23+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://ocomme.github.io/tags/note/</loc>
     <lastmod>2017-08-03T16:48:42+08:00</lastmod>
     <priority>0</priority>
@@ -56,13 +72,13 @@
   
   <url>
     <loc>https://ocomme.github.io/</loc>
-    <lastmod>2017-08-07T18:50:23+08:00</lastmod>
+    <lastmod>2017-08-09T16:21:23+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://ocomme.github.io/post/</loc>
-    <lastmod>2017-08-07T18:50:23+08:00</lastmod>
+    <lastmod>2017-08-09T16:21:23+08:00</lastmod>
     <priority>0</priority>
   </url>
   
