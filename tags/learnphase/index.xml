@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Learnphase on OComme&#39;s blog</title>
+    <link>https://ocomme.github.io/tags/learnphase/</link>
+    <description>Recent content in Learnphase on OComme&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 13 Aug 2017 21:52:47 +0800</lastBuildDate>
+    
+	<atom:link href="https://ocomme.github.io/tags/learnphase/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>FirstLearnIn2017</title>
+      <link>https://ocomme.github.io/post/learnphase/firstlearnin2017/</link>
+      <pubDate>Sun, 13 Aug 2017 21:52:47 +0800</pubDate>
+      
+      <guid>https://ocomme.github.io/post/learnphase/firstlearnin2017/</guid>
+      <description>&amp;emsp;&amp;emsp;很庆幸自己还算是喜欢读书，对知识充满渴求的。 &amp;emsp;&amp;emsp;记得刚毕业的时候，我并没有凭自己的努力找工作的想</description>
+    </item>
+    
+  </channel>
+</rss>

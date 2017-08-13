@@ -6,10 +6,19 @@
     <description>Recent content on OComme&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 12 Aug 2017 17:33:23 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 13 Aug 2017 21:52:47 +0800</lastBuildDate>
     
 	<atom:link href="https://ocomme.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>FirstLearnIn2017</title>
+      <link>https://ocomme.github.io/post/learnphase/firstlearnin2017/</link>
+      <pubDate>Sun, 13 Aug 2017 21:52:47 +0800</pubDate>
+      
+      <guid>https://ocomme.github.io/post/learnphase/firstlearnin2017/</guid>
+      <description>&amp;emsp;&amp;emsp;很庆幸自己还算是喜欢读书，对知识充满渴求的。 &amp;emsp;&amp;emsp;记得刚毕业的时候，我并没有凭自己的努力找工作的想</description>
+    </item>
     
     <item>
       <title>Objective-c Coding Standard</title>
@@ -63,15 +72,6 @@
       
       <guid>https://ocomme.github.io/post/note/skilltree/</guid>
       <description>总结自己开发中需要的知识，便是形成自己的技能树体系了。 参考下自己与别人的技能树分枝的不同也能知道哪些方面自己缺失的 1. 常用语言 Swift Object-C 2. 使用过的系</description>
-    </item>
-    
-    <item>
-      <title>Novel</title>
-      <link>https://ocomme.github.io/about/novel/</link>
-      <pubDate>Wed, 02 Aug 2017 08:43:28 +0800</pubDate>
-      
-      <guid>https://ocomme.github.io/about/novel/</guid>
-      <description>&amp;emsp;&amp;emsp;前段时间在简书上看到一篇很有意思的文章，是简书知名博主彭小六所作。虽说是觉着耳目一新啦，但也就粗略瞄了几下。 &amp;ems</description>
     </item>
     
   </channel>
