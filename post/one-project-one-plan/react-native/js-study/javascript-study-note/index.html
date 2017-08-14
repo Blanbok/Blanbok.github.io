@@ -44,8 +44,8 @@
                     </h1>
                     <h2 class="headline">
                     Aug 9, 2017 16:21
-                    · 258 words
-                    · 1 minute read
+                    · 939 words
+                    · 2 minutes read
                       <span class="tags">
                       
                       
@@ -59,7 +59,9 @@
                 </header>
                 
                 <section id="post-body">
-                    <p>刚开始学习，也不敢太贪进，便从初级的教材《JavaScript从入门到精通（第2版）》开始学起。</p>
+                    
+
+<p>刚开始学习，也不敢太贪进，便从初级的教材《JavaScript从入门到精通（第2版）》开始学起。</p>
 
 <p>首先接触的，自然是熟悉的“Hello World”了。</p>
 
@@ -95,6 +97,228 @@
 <p>函数：<code>write</code></p>
 
 <p>参数：<code>&quot;hello&quot;</code></p>
+
+<h1 id="基本数据类型">基本数据类型</h1>
+
+<ul>
+<li>数字（Number）</li>
+<li>字符串（String）</li>
+<li>布尔值（Boolean）</li>
+<li>Null</li>
+<li>未定义（Undefined）</li>
+<li>对象（Object）</li>
+</ul>
+
+<h2 id="数值函数-isnan">数值函数 <code>isNaN()</code></h2>
+
+<blockquote>
+<p>&ldquo;is not a number&rdquo;</p>
+</blockquote>
+
+<p>是数字返回<code>false</code>  非数字返回<code>true</code></p>
+
+<p><code>Math</code>对象</p>
+
+<p>返回的值类型：</p>
+
+<ul>
+<li><code>Math.PI</code> pi值</li>
+<li><code>Math.pow(x,y)</code>返回x的y次幂</li>
+<li><code>Math.random()</code>返回一个伪随机数</li>
+<li><code>Math.abs(x)</code> 返回x的绝对值</li>
+<li><code>Math.round(x)</code>将x取值为最接近的整数值</li>
+</ul>
+
+<p>转义字符序列</p>
+
+<table>
+<thead>
+<tr>
+<th>转义符号</th>
+<th>序列值</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>\b</td>
+<td>退格符</td>
+</tr>
+
+<tr>
+<td>\t</td>
+<td>水平制表符</td>
+</tr>
+
+<tr>
+<td>\n</td>
+<td>换行符</td>
+</tr>
+
+<tr>
+<td>\v</td>
+<td>垂直制表符</td>
+</tr>
+
+<tr>
+<td>\f</td>
+<td>换页符</td>
+</tr>
+
+<tr>
+<td>\r</td>
+<td>回车符</td>
+</tr>
+
+<tr>
+<td>\</td>
+<td>反斜杠符</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="字符串">字符串</h2>
+
+<pre><code>var str = &quot;this is a string&quot;;
+alert(str.length);
+</code></pre>
+
+<p>直接用点语法获取字符串的长度</p>
+
+<p>使用<code>str.substring(3,9)</code>表示从第3位字符开始到达第9位字符，<code>s</code>是第0位字符</p>
+
+<p>使用<code>str.slice(3,9)</code>表示从第3位字符,向后数9位字符</p>
+
+<p>使用<code>str.toUppearCase()</code>将字符串中所有的字符转为大写</p>
+
+<p>使用<code>str.toLowerCase()</code>将字符串中所有的字符转为小写</p>
+
+<h2 id="数组">数组</h2>
+
+<p>直接创建数组的方法</p>
+
+<pre><code>var star = [&quot;polaris&quot;,&quot;Deneb&quot;,&quot;Vega&quot;,&quot;Altair&quot;];
+
+var star = [[&quot;Polaris&quot;,&quot;Ursa Minor&quot;],[&quot;Deneb&quot;,&quot;Cygnus&quot;],[&quot;Vega&quot;,&quot;Lyra&quot;],[&quot;Altair&quot;,&quot;Aquila&quot;]];
+</code></pre>
+
+<h2 id="date">Date</h2>
+
+<p>get方法</p>
+
+<table>
+<thead>
+<tr>
+<th>方法名称</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>getDate()</td>
+<td>返回月中的某天</td>
+</tr>
+
+<tr>
+<td>getDay()</td>
+<td>返回星期中的某天</td>
+</tr>
+
+<tr>
+<td>getFullYear()</td>
+<td>返回四位数年份表示，相较于getYear()方法在大多数环境下被推荐使用</td>
+</tr>
+
+<tr>
+<td>getHours()</td>
+<td>返回日期中的小时</td>
+</tr>
+
+<tr>
+<td>getMilliseconds()</td>
+<td>返回日期中的毫秒</td>
+</tr>
+
+<tr>
+<td>getMinutes()</td>
+<td>返回日期中的分钟</td>
+</tr>
+
+<tr>
+<td>getMonth()</td>
+<td>返回日期中的月</td>
+</tr>
+
+<tr>
+<td>getSeconds</td>
+<td>返回日期中的秒</td>
+</tr>
+
+<tr>
+<td>getTime()</td>
+<td>返回自1970年1月1日起的毫秒</td>
+</tr>
+
+<tr>
+<td>getTimeZoneOffset()</td>
+<td>返回UTC和本地时间之差值所对应的分钟数</td>
+</tr>
+</tbody>
+</table>
+
+<p>set方法</p>
+
+<table>
+<thead>
+<tr>
+<th>方法名称</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>setDate()</td>
+<td>设置月中的某天</td>
+</tr>
+
+<tr>
+<td>setFullYear()</td>
+<td>设置日期中的四位数年份表示。也接受月以及月中的一天所对应的整数</td>
+</tr>
+
+<tr>
+<td>setHours()</td>
+<td>设置日期中的小时</td>
+</tr>
+
+<tr>
+<td>setMilliseconds()</td>
+<td>设置日期中的毫秒</td>
+</tr>
+
+<tr>
+<td>setMinutes()</td>
+<td>设置日期中的分钟</td>
+</tr>
+
+<tr>
+<td>setMonth()</td>
+<td>设置日期中的月</td>
+</tr>
+
+<tr>
+<td>setSeconds()</td>
+<td>设置日期中的秒</td>
+</tr>
+
+<tr>
+<td>setTime()</td>
+<td>使用自1970年1月1日起的毫秒数设置时间</td>
+</tr>
+</tbody>
+</table>
 
                 </section>
             </article>
