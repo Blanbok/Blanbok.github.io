@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>One-project-one-plans on OComme&#39;s blog</title>
+    <link>https://ocomme.github.io/post/one-project-one-plan/</link>
+    <description>Recent content in One-project-one-plans on OComme&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 07 Aug 2017 17:56:02 +0800</lastBuildDate>
+    
+	<atom:link href="https://ocomme.github.io/post/one-project-one-plan/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>One Project One Plan</title>
+      <link>https://ocomme.github.io/post/one-project-one-plan/one-project-one-plan/</link>
+      <pubDate>Mon, 07 Aug 2017 17:56:02 +0800</pubDate>
+      
+      <guid>https://ocomme.github.io/post/one-project-one-plan/one-project-one-plan/</guid>
+      <description>Daily income is recorded by a small project each day 起初，我是为了学习Swift仿着30DaysofSwift而开始自己的My30DaysofSwift-4.0。 第一个项目</description>
+    </item>
+    
+  </channel>
+</rss>

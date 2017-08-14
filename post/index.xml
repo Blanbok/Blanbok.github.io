@@ -6,10 +6,19 @@
     <description>Recent content in Posts on OComme&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 13 Aug 2017 21:52:47 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 14 Aug 2017 09:40:15 +0800</lastBuildDate>
     
 	<atom:link href="https://ocomme.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>React Native 学习之路</title>
+      <link>https://ocomme.github.io/post/one-project-one-plan/react-native/react-native/</link>
+      <pubDate>Mon, 14 Aug 2017 09:40:15 +0800</pubDate>
+      
+      <guid>https://ocomme.github.io/post/one-project-one-plan/react-native/react-native/</guid>
+      <description>&amp;emsp;&amp;emsp;最近正在这边想着学下React Native,本以为只是单纯的学习这一个库。 &amp;emsp;&amp;emsp;却不想，要学Rea</description>
+    </item>
     
     <item>
       <title>FirstLearnIn2017</title>
@@ -31,47 +40,20 @@
     
     <item>
       <title>JavaScript Study Note</title>
-      <link>https://ocomme.github.io/post/js-study/javascript-study-note/</link>
+      <link>https://ocomme.github.io/post/one-project-one-plan/react-native/js-study/javascript-study-note/</link>
       <pubDate>Wed, 09 Aug 2017 16:21:23 +0800</pubDate>
       
-      <guid>https://ocomme.github.io/post/js-study/javascript-study-note/</guid>
+      <guid>https://ocomme.github.io/post/one-project-one-plan/react-native/js-study/javascript-study-note/</guid>
       <description>刚开始学习，也不敢太贪进，便从初级的教材《JavaScript从入门到精通（第2版）》开始学起。 首先接触的，自然是熟悉的“Hello Worl</description>
     </item>
     
     <item>
       <title>One Project One Plan</title>
-      <link>https://ocomme.github.io/post/project/one-project-one-plan/</link>
+      <link>https://ocomme.github.io/post/one-project-one-plan/one-project-one-plan/</link>
       <pubDate>Mon, 07 Aug 2017 17:56:02 +0800</pubDate>
       
-      <guid>https://ocomme.github.io/post/project/one-project-one-plan/</guid>
+      <guid>https://ocomme.github.io/post/one-project-one-plan/one-project-one-plan/</guid>
       <description>Daily income is recorded by a small project each day 起初，我是为了学习Swift仿着30DaysofSwift而开始自己的My30DaysofSwift-4.0。 第一个项目</description>
-    </item>
-    
-    <item>
-      <title>Benchmarking</title>
-      <link>https://ocomme.github.io/post/note/benchmarkingmanagement/</link>
-      <pubDate>Thu, 03 Aug 2017 16:48:42 +0800</pubDate>
-      
-      <guid>https://ocomme.github.io/post/note/benchmarkingmanagement/</guid>
-      <description>找到目标(一个好的项目，希望达到的知识水平和目标的人) 对标准的分析(有用的东西，如知识、习惯等) 对标差距(当前与目标的差距) 行动计划(实现目</description>
-    </item>
-    
-    <item>
-      <title>Review</title>
-      <link>https://ocomme.github.io/post/note/review/</link>
-      <pubDate>Thu, 03 Aug 2017 16:48:42 +0800</pubDate>
-      
-      <guid>https://ocomme.github.io/post/note/review/</guid>
-      <description>所谓Review，就是在头脑中对过去所做的事情重新“过”一遍。它通过对过去的思维和行为进行回顾、反思和探究，实现能力的提升。 对于一个固定的项</description>
-    </item>
-    
-    <item>
-      <title>SkillTree</title>
-      <link>https://ocomme.github.io/post/note/skilltree/</link>
-      <pubDate>Thu, 03 Aug 2017 16:48:42 +0800</pubDate>
-      
-      <guid>https://ocomme.github.io/post/note/skilltree/</guid>
-      <description>总结自己开发中需要的知识，便是形成自己的技能树体系了。 参考下自己与别人的技能树分枝的不同也能知道哪些方面自己缺失的 1. 常用语言 Swift Object-C 2. 使用过的系</description>
     </item>
     
   </channel>
