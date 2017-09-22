@@ -6,10 +6,28 @@
     <description>Recent content on OComme&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 14 Aug 2017 09:40:15 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 22 Sep 2017 09:00:32 +0800</lastBuildDate>
     
 	<atom:link href="https://ocomme.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Apple Basic architecture</title>
+      <link>https://ocomme.github.io/post/ios-development/apple-basic-architecture/</link>
+      <pubDate>Fri, 22 Sep 2017 09:00:32 +0800</pubDate>
+      
+      <guid>https://ocomme.github.io/post/ios-development/apple-basic-architecture/</guid>
+      <description>架构的基本认识 &amp;hellip;各层次的架构 总结 [TOC] 关于架构 架构，又名软件架构，是有关软件整体结构与组件的抽象描述，用于指导大型软件系统各个方面</description>
+    </item>
+    
+    <item>
+      <title>读《这样读书就够了》笔记</title>
+      <link>https://ocomme.github.io/post/learnphase/thefirstbooks/</link>
+      <pubDate>Mon, 14 Aug 2017 13:09:47 +0800</pubDate>
+      
+      <guid>https://ocomme.github.io/post/learnphase/thefirstbooks/</guid>
+      <description>拆书者： 以自己为中心 发散加联想</description>
+    </item>
     
     <item>
       <title>React Native 学习之路</title>
