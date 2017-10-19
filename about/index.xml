@@ -11,32 +11,5 @@
 	<atom:link href="https://ocomme.github.io/about/index.xml" rel="self" type="application/rss+xml" />
     
     
-    <item>
-      <title>SkillTree</title>
-      <link>https://ocomme.github.io/about/person-info/skilltree/</link>
-      <pubDate>Thu, 03 Aug 2017 16:48:42 +0800</pubDate>
-      
-      <guid>https://ocomme.github.io/about/person-info/skilltree/</guid>
-      <description>总结自己开发中需要的知识，便是形成自己的技能树体系了。 参考下自己与别人的技能树分枝的不同也能知道哪些方面自己缺失的 1. 常用语言 Swift Object-C 2. 使用过的系</description>
-    </item>
-    
-    <item>
-      <title>Study-Plan</title>
-      <link>https://ocomme.github.io/about/study-plan/study-plan/</link>
-      <pubDate>Thu, 03 Aug 2017 16:48:42 +0800</pubDate>
-      
-      <guid>https://ocomme.github.io/about/study-plan/study-plan/</guid>
-      <description>找到目标(一个好的项目，希望达到的知识水平和目标的人) 对标准的分析(有用的东西，如知识、习惯等) 对标差距(当前与目标的差距) 行动计划(实现目</description>
-    </item>
-    
-    <item>
-      <title>Novel</title>
-      <link>https://ocomme.github.io/about/novel/novel/</link>
-      <pubDate>Wed, 02 Aug 2017 08:43:28 +0800</pubDate>
-      
-      <guid>https://ocomme.github.io/about/novel/novel/</guid>
-      <description>&amp;emsp;&amp;emsp;前段时间在简书上看到一篇很有意思的文章，是简书知名博主彭小六所作。虽说是觉着耳目一新啦，但也就粗略瞄了几下。 &amp;ems</description>
-    </item>
-    
   </channel>
 </rss>

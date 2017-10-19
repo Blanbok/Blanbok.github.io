@@ -44,7 +44,7 @@
                     </h1>
                     <h2 class="headline">
                     Aug 12, 2017 17:33
-                    · 9679 words
+                    · 9635 words
                     · 20 minutes read
                       <span class="tags">
                       
@@ -637,13 +637,13 @@ __FILE__
 
 <p>首先，重写系统初始化方法，下面是把将普通的init方法和可视化的初始化方法重写，</p>
 
-<p>然后调用我们自己的初始化方法<code>- (void)commInit</code></p>
+<p>然后调用我们自己的初始化方法<code>- (void)commitInit</code></p>
 
 <pre><code>//以frame初始化的方法
 - (instancetype)initWithFrame:(CGRect)frame
 {
     if (self = [super initWithFrame:frame]) {
-        [self commInit];
+        [self commitInit];
     }
     return self;
 }
@@ -652,13 +652,13 @@ __FILE__
 - (instancetype)initWithCoder:(NSCoder *)aDecoder
 {
     if (self = [super initWithCoder:aDecoder]) {
-        [self commInit];
+        [self commitInit];
     }
     return self;
 }
 
 //自己的初始化方法
-- (void)commInit
+- (void)commitInit
 {
 
 }
@@ -668,7 +668,7 @@ __FILE__
 <p>之后在我们的初始化方法中调用需要的操作，这里我们使用了，子视图添加、约束设置和交互设置三个方法</p>
 
 <pre><code>//初始化方法
-- (void)commInit
+- (void)commitInit
 {
     [self theSubViewAdd];
     [self theLayoutSet];
@@ -885,7 +885,7 @@ __FILE__
 
 <h3 id="1-ui调试工具">(1) UI调试工具</h3>
 
-<p>对于UI的调试，据我所知的有两种：</p>
+<p>对于UI的调试，据我所知的有两种（PS:系统那个用不习惯）：</p>
 
 <p><a href="https://revealapp.com">Reveal</a>和<a href="http://ryanipete.com/blog/ios/swift/objective-c/uidebugginginformationoverlay/">UIDebuggingInformationOverlay</a></p>
 
@@ -939,16 +939,17 @@ __FILE__
 
 <p>终归还是<a href="https://github.com/">Github</a>通用性最强，各种强大的工具都能找到</p>
 
-<p><a href="https://coding.net">码市</a>反正我是没怎么用过的</p>
+<p><a href="https://coding.net">Coding.net</a>也还可以用下
+开源中国的<a href="https://gitee.com/">码云</a>界面太丑，实在不想用</p>
 
 <h1 id="六-项目的基本架构">六- 项目的基本架构</h1>
 
-<pre><code>    ├── &lt;Supporting Files&gt;(放置预编译文件、系统配置文件和`APPDelegate.*`类)
-    ├── &lt;Utils&gt;（适用于本项目的自定义类库。根据功能可以细分下去。例如：UI类、Data类、Net类）
-    ├── &lt;BaseController&gt;（控制器的基类，方能统一管理控制器的各项特征）
-    ├── &lt;TabBarController&gt;（窗口根控制器）
-    ├── &lt;CodeClass&gt;（项目真正的构建内容）
-    └── &lt;Pods（或Carthage）&gt;工程（第三方SDK以及自己做的小工具）
+<pre><code>    ├── &lt;Router&gt;                    负责APP层面业务的模块
+    ├── &lt;CodeFeed&gt;                  项目真正的构建内容
+    ├── &lt;PrefixHeader&gt;              预编译文件
+    ├── &lt;Utils&gt;                     适用于本项目的自定义类库。根据功能可以细分下去。
+    ├── &lt;Supporting Files&gt;          系统配置文件及组成基础构架的文件
+    └── &lt;Pods（或Carthage）&gt;工程     第三方SDK以及自己做的小工具
 </code></pre>
 
 <p>若要了更详细，可以参考<a href="https://github.com/OComme/MobileProjectArchitectureDemo">MobileProjectArchitectureDemo</a></p>
@@ -971,37 +972,66 @@ __FILE__
 
 <p>省省把，工具本来就是帮我们提升开发效率的，将这么强大的功能弃置不顾，仅仅把它作为一个便利的获取轮子的工具，确实该自省了！</p>
 
-<h2 id="2-supporting-files">2、Supporting Files</h2>
+<h2 id="2-router-负责app层面业务的模块">2、Router ——负责APP层面业务的模块</h2>
 
-<p>对于些系统的配置文件 <code>Info.plist</code>、<code>InfoPlist.strings</code>和预编译的文件<code>.pch</code>、<code>header File</code>以及<code>main.m</code>主函数。</p>
+<p>处理APP层面的业务，其下分为</p>
+
+<pre><code>    ├── &lt;M&gt;  模型
+    └── &lt;VM&gt; 模块间的业务处理
+</code></pre>
+
+<p>其中</p>
+
+<p>M层存放和App相关的模型信息</p>
+
+<p>VM层负责App层面业务，</p>
+
+<h2 id="3-codefeed-存放app页面实际构建的代码">3、CodeFeed ——存放APP页面实际构建的代码</h2>
+
+<p>其内部分</p>
+
+<pre><code>```
+├── &lt;SuperCode&gt;         模块中所用到的通用的父视图的集合（尽可能的少）
+├── &lt;EntityCode&gt;        项代码实体，包含所有的页面的构建
+└── &lt;PublicCode&gt;        在多个页面用到的公共的页面（控制器）
+
+```
+</code></pre>
+
+<p>其中<EntityCode>和<PublicCode></p>
+
+<p>内部以MVVM构架进行搭建，其下分为</p>
+
+<pre><code>├── &lt;M&gt;  模型
+├── &lt;V&gt;  视图
+└── &lt;VM&gt; 视图模型的业务处理
+</code></pre>
+
+<p>其中</p>
+
+<p>M层存放模型信息</p>
+
+<p>V层存放模块相关的控制器和视图</p>
+
+<p>VM层负责处理模块内部的业务，</p>
+
+<h2 id="4-prefixheader">4、PrefixHeader</h2>
+
+<p>存放.pch文件及其它进行预编译的文件</p>
+
+<p>例如：只重写了 + (void)load的类。</p>
+
+<h2 id="5-utils">5、Utils</h2>
+
+<p>存放只适用于当前项目的类（可以通用的类，应该提取出去，放在托管平台进行维护）</p>
+
+<p>根据功能可以细分下去。UI类，Data类&hellip;等</p>
+
+<h2 id="6-supporting-files">6、Supporting Files</h2>
+
+<p>对于些系统的配置文件 <code>Info.plist</code>、<code>Appdelegate</code>、<code>InfoPlist.strings</code>和预编译的文件<code>.pch</code>、<code>header File</code>以及<code>main.m</code>主函数。</p>
 
 <p>通常我们在项目创建之后，对这些文件的访问频率都会很低的，因此可以将它们都放做一块，统一管理。</p>
-
-<h2 id="3-utils">3、Utils</h2>
-
-<p>对于适用性很小，仅在当前项目中通用的工具类。我们统一放在Utils类目下，分门别类的列出来。</p>
-
-<h2 id="4-basecontroller">4、BaseController</h2>
-
-<p>放置控制器的基类，方能统一管理控制器的各项特征。</p>
-
-<p>项目中应该是尽量少的创建基类，否则项目内部模块的耦合性会达到自己都不能理清的地步。</p>
-
-<h2 id="4-tabbarcontroller">4、TabBarController</h2>
-
-<p>对于窗口的根控制器，它的位置是有点尴尬。</p>
-
-<p>作为项目中实际存在一个控制器，它应该放在<code>CodeClass</code>里面，但这样也将这类目强行加了一层。</p>
-
-<p>作为一个创建之后就确定的，不会轻易改变的类，它也可以放置在<code>Supporting Files</code>里。</p>
-
-<p>既然都不好下决定，索性就新开一层，专门放置好了。</p>
-
-<h2 id="5-codeclass">5、CodeClass</h2>
-
-<p>项目构建的实际结构，按照界面层次逐层的创建下去。</p>
-
-<p>其内部构架就按经典<code>MVC</code>，分类的文件夹直接标以<code>M</code>、<code>V</code>、<code>C</code>，对模块的构架就一目了然了。</p>
 
 <h1 id="番外-代码的进化">番外 代码的进化</h1>
 
@@ -1041,7 +1071,7 @@ __FILE__
 
 <ul>
 <li>U盘、云盘存放 封装代码</li>
-<li>使用<a href="https://github.com/OComme">Github</a>托管维护代码，配置<code>podspec</code></li>
+<li>使用云端代码仓库托管维护代码，配置<code>podspec</code></li>
 </ul>
 
 <h3 id="项目框架">项目框架</h3>
@@ -1050,6 +1080,7 @@ __FILE__
 <li>无意识、片面的<code>MVC</code>架构</li>
 <li>实践优化过后的<code>MVC</code>架构</li>
 <li>依据模块功能进行架构的选择（<code>MVC</code>、<code>MVVM</code>）</li>
+<li>尝试<a href="https://github.com/OComme/iOS-ComponentDevelopment">组件化的项目构建</a></li>
 </ul>
 
 <p>从菜鸟到正式的开发者，从零到一，我们正在被时代拖拽着前行。</p>

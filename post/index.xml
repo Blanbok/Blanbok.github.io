@@ -21,57 +21,12 @@
     </item>
     
     <item>
-      <title>读《这样读书就够了》笔记</title>
-      <link>https://ocomme.github.io/post/learnphase/thefirstbooks/</link>
-      <pubDate>Mon, 14 Aug 2017 13:09:47 +0800</pubDate>
-      
-      <guid>https://ocomme.github.io/post/learnphase/thefirstbooks/</guid>
-      <description>拆书者： 以自己为中心 发散加联想</description>
-    </item>
-    
-    <item>
-      <title>React Native 学习之路</title>
-      <link>https://ocomme.github.io/post/one-project-one-plan/react-native/react-native/</link>
-      <pubDate>Mon, 14 Aug 2017 09:40:15 +0800</pubDate>
-      
-      <guid>https://ocomme.github.io/post/one-project-one-plan/react-native/react-native/</guid>
-      <description>&amp;emsp;&amp;emsp;最近正在这边想着学下React Native,本以为只是单纯的学习这一个库。 &amp;emsp;&amp;emsp;却不想，要学Rea</description>
-    </item>
-    
-    <item>
-      <title>FirstLearnIn2017</title>
-      <link>https://ocomme.github.io/post/learnphase/firstlearnin2017/</link>
-      <pubDate>Sun, 13 Aug 2017 21:52:47 +0800</pubDate>
-      
-      <guid>https://ocomme.github.io/post/learnphase/firstlearnin2017/</guid>
-      <description>&amp;emsp;&amp;emsp;很庆幸自己还算是喜欢读书，对知识充满渴求的。 &amp;emsp;&amp;emsp;记得刚毕业的时候，我并没有凭自己的努力找工作的想</description>
-    </item>
-    
-    <item>
       <title>Objective-c Coding Standard</title>
       <link>https://ocomme.github.io/post/ios-development/objective-c-coding-standard/</link>
       <pubDate>Sat, 12 Aug 2017 17:33:23 +0800</pubDate>
       
       <guid>https://ocomme.github.io/post/ios-development/objective-c-coding-standard/</guid>
       <description>此次规范从当前的开发现状（风格各异）出发，奠基于当前的编码习惯，旨在规范大家的编程行为。 待到下次开会的时候，仍需依据自己的习惯，提出针对性的</description>
-    </item>
-    
-    <item>
-      <title>JavaScript Study Note</title>
-      <link>https://ocomme.github.io/post/one-project-one-plan/react-native/js-study/javascript-study-note/</link>
-      <pubDate>Wed, 09 Aug 2017 16:21:23 +0800</pubDate>
-      
-      <guid>https://ocomme.github.io/post/one-project-one-plan/react-native/js-study/javascript-study-note/</guid>
-      <description>刚开始学习，也不敢太贪进，便从初级的教材《JavaScript从入门到精通（第2版）》开始学起。 首先接触的，自然是熟悉的“Hello Worl</description>
-    </item>
-    
-    <item>
-      <title>One Project One Plan</title>
-      <link>https://ocomme.github.io/post/one-project-one-plan/one-project-one-plan/</link>
-      <pubDate>Mon, 07 Aug 2017 17:56:02 +0800</pubDate>
-      
-      <guid>https://ocomme.github.io/post/one-project-one-plan/one-project-one-plan/</guid>
-      <description>Daily income is recorded by a small project each day 起初，我是为了学习Swift仿着30DaysofSwift而开始自己的My30DaysofSwift-4.0。 第一个项目</description>
     </item>
     
   </channel>
