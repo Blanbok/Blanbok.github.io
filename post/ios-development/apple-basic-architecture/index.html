@@ -44,8 +44,8 @@
                     </h1>
                     <h2 class="headline">
                     Sep 22, 2017 09:00
-                    · 8580 words
-                    · 18 minutes read
+                    · 9375 words
+                    · 19 minutes read
                       <span class="tags">
                       
                       
@@ -61,13 +61,7 @@
                 <section id="post-body">
                     
 
-<ol>
-<li>架构的基本认识</li>
-<li>&hellip;各层次的架构</li>
-<li>总结</li>
-</ol>
-
-<p>[TOC]</p>
+<!--[TOC]-->
 
 <h1 id="关于架构">关于架构</h1>
 
@@ -89,59 +83,77 @@
 
 <p>一般而言，软件系统的架构（Architecture）有两个要素：</p>
 
-<ol>
-<li><p>它是一个软件系统从整体到部分的最高层次的划分。一个系统通常是由元件组成的，而这些元件如何形成、相互之间如何发生作用，则是关于这个系统本身结构的重要信息。详细地说，就是要包括架构元件（Architecture Component）、联结器（Connector）、任务流（Task-flow）。所谓架构元素，也就是组成系统的核心&rdquo;砖瓦&rdquo;，而联结器则描述这些元件之间通讯的路径、通讯的机制、通讯的预期结果，任务流则描述系统如何使用这些元件和联结器完成某一项需求。</p></li>
+<p>1、它是一个软件系统从整体到部分的最高层次的划分。</p>
 
-<li><p>建造一个系统所作出的最高层次的、以后难以更改的，商业的和技术的决定。在建造一个系统之前会有很多的重要决定需要事先作出，而一旦系统开始进行详细设计甚至建造，这些决定就很难更改甚至无法更改。显然，这样的决定必定是有关系统设计成败的最重要决定，必须经过非常慎重的研究和考察。‘</p></li>
-</ol>
+<p>一个系统通常是由元件组成的，而这些元件如何形成、相互之间如何发生作用，则是关于这个系统本身结构的重要信息。</p>
+
+<p>详细地说，就是要包括架构元件（Architecture Component）、联结器（Connector）、任务流（Task-flow）。</p>
+
+<p>所谓架构元素，也就是组成系统的核心&rdquo;砖瓦&rdquo;，而联结器则描述这些元件之间通讯的路径、通讯的机制、通讯的预期结果，任务流则描述系统如何使用这些元件和联结器完成某一项需求。</p>
+
+<p>2、建造一个系统所作出的最高层次的、以后难以更改的，商业的和技术的决定。</p>
+
+<p>在建造一个系统之前会有很多的重要决定需要事先作出，而一旦系统开始进行详细设计甚至建造，这些决定就很难更改甚至无法更改。</p>
+
+<p>显然，这样的决定必定是有关系统设计成败的最重要决定，必须经过非常慎重的研究和考察。‘</p>
 
 <h2 id="二-设计目标">(二) 设计目标</h2>
 
-<ol>
-<li><p>可靠性（Reliable）。软件系统对于用户的商业经营和管理来说极为重要，因此软件系统必须非常可靠。</p></li>
+<p>1、可靠性（Reliable）。</p>
 
-<li><p>安全性（Secure）。软件系统所承担的交易的商业价值极高，系统的安全性非常重要。</p></li>
+<p>软件系统对于用户的商业经营和管理来说极为重要，因此软件系统必须非常可靠。</p>
 
-<li><p>可扩展性（Scalable）。软件必须能够在用户的使用率、用户的数目增加很快的情况下，保持合理的性能。只有这样，才能适应用户的市场扩展得可能性。</p></li>
+<p>2、安全性（Secure）。</p>
 
-<li><p>可定制化（Customizable）。同样的一套软件，可以根据客户群的不同和市场需求的变化进行调整。</p></li>
+<p>软件系统所承担的交易的商业价值极高，系统的安全性非常重要。</p>
 
-<li><p>可伸缩 （Extensible）。在新技术出现的时候，一个软件系统应当允许导入新技术，从而对现有系统进行功能和性能的扩展。</p></li>
+<p>3、可扩展性（Scalable）。</p>
 
-<li><p>可维护性（Maintainable）。软件系统的维护包括两方面，一是排除现有的错误，二是将新的软件需求反映到现有系统中去。一个易于维护的系统可以有效地降低技术支持的花费。</p></li>
+<p>软件必须能够在用户的使用率、用户的数目增加很快的情况下，保持合理的性能。只有这样，才能适应用户的市场扩展得可能性。</p>
 
-<li><p>客户体验（Customer Experience）。软件系统必须易于使用。</p></li>
+<p>4、可定制化（Customizable）。</p>
 
-<li><p>市场时机（Time to Market）。软件用户要面临同业竞争，软件提供商也要面临同业竞争。以最快的速度争夺市场先机非常重要。</p></li>
-</ol>
+<p>同样的一套软件，可以根据客户群的不同和市场需求的变化进行调整。</p>
+
+<p>5、可伸缩 （Extensible）。</p>
+
+<p>在新技术出现的时候，一个软件系统应当允许导入新技术，从而对现有系统进行功能和性能的扩展。</p>
+
+<p>6、可维护性（Maintainable）。</p>
+
+<p>软件系统的维护包括两方面，一是排除现有的错误，二是将新的软件需求反映到现有系统中去。一个易于维护的系统可以有效地降低技术支持的花费。</p>
+
+<p>7、客户体验（Customer Experience）。</p>
+
+<p>软件系统必须易于使用。</p>
+
+<p>8、市场时机（Time to Market）。</p>
+
+<p>软件用户要面临同业竞争，软件提供商也要面临同业竞争。以最快的速度争夺市场先机非常重要。</p>
 
 <h2 id="三-构架设计的方法">(三) 构架设计的方法</h2>
 
-<ol>
-<li><p>搞清楚要解决哪些问题，并找到解决这些问题的充要条件。</p></li>
+<p>1、搞清楚要解决哪些问题，并找到解决这些问题的充要条件。</p>
 
-<li><p>问题分类，分模块</p></li>
+<p>2、问题分类，分模块</p>
 
-<li><p>搞清楚各问题之间的依赖关系，建立好模块交流规范并设计模块。</p></li>
+<p>3、搞清楚各问题之间的依赖关系，建立好模块交流规范并设计模块。</p>
 
-<li><p>推演预测一下未来可能的走向，必要时添加新的模块，记录更多的基础数据以备未来之需。</p></li>
+<p>4、推演预测一下未来可能的走向，必要时添加新的模块，记录更多的基础数据以备未来之需。</p>
 
-<li><p>先解决依赖关系中最基础的问题，实现基础模块，然后再用基础模块堆叠出整个架构。</p></li>
+<p>5、先解决依赖关系中最基础的问题，实现基础模块，然后再用基础模块堆叠出整个架构。</p>
 
-<li><p>打点，跑单元测试，跑性能测试，根据数据去优化对应的地方。</p></li>
-</ol>
+<p>6、打点，跑单元测试，跑性能测试，根据数据去优化对应的地方。</p>
 
 <h2 id="四-种类">(四) 种类</h2>
 
 <p>根据我们关注的角度不同，可以将架构分成三种：</p>
 
-<ol>
-<li><p>逻辑架构、软件系统中元件之间的关系，比如用户界面，数据库，外部系统接口，商业逻辑元件，等等。</p></li>
+<p>1、逻辑架构、软件系统中元件之间的关系，比如用户界面，数据库，外部系统接口，商业逻辑元件，等等。</p>
 
-<li><p>物理架构、软件元件是怎样放到硬件上的。</p></li>
+<p>2、物理架构、软件元件是怎样放到硬件上的。</p>
 
-<li><p>系统架构、系统的非功能性特征，如可扩展性、可靠性、强壮性、灵活性、性能等。系统架构的设计要求架构师具备软件和硬件的功能和性能的过硬知识，这一工作无疑是架构设计工作中最为困难的工作。</p></li>
-</ol>
+<p>3、系统架构、系统的非功能性特征，如可扩展性、可靠性、强壮性、灵活性、性能等。系统架构的设计要求架构师具备软件和硬件的功能和性能的过硬知识，这一工作无疑是架构设计工作中最为困难的工作。</p>
 
 <h2 id="五-好架构的标准">(五) 好架构的标准</h2>
 
@@ -202,7 +214,7 @@
 <li>界面元素表达</li>
 </ul>
 
-<p><img src="http://img.blog.csdn.net/20160727184528761" alt="" /></p>
+<p><img src="https://raw.githubusercontent.com/OComme/OComme.github.io/master/Assets/Basic%20architecture/image1.png" alt="" /></p>
 
 <h4 id="分工总结">分工总结:</h4>
 
@@ -214,13 +226,13 @@
 
 <h3 id="mvc通信特点">MVC通信特点</h3>
 
-<p><img src="http://img.blog.csdn.net/20160727181538876" alt="" /></p>
+<p><img src="https://raw.githubusercontent.com/OComme/OComme.github.io/master/Assets/Basic%20architecture/image2.gif" alt="" /></p>
 
-<ol>
-<li>Model和View永远不能相互通信，只能通过Controller传递。</li>
-<li>Controller可以直接与Model通信（读写调用Model），Model通过Notification和KVO机制与Controller间接通信。</li>
-<li>Controller与View通过Target/Action, delegate和datasource三种模式进行通信。通过这三种模式，View就可以向Controller通信, Action/Target 模式来让Controller 监听View 触发的事件。View又通过Data source和delegate进行数据获取和某些通信操作。</li>
-</ol>
+<p>1、Model和View永远不能相互通信，只能通过Controller传递。</p>
+
+<p>2、Controller可以直接与Model通信（读写调用Model），Model通过Notification和KVO机制与Controller间接通信。</p>
+
+<p>3、Controller与View通过Target/Action, delegate和datasource三种模式进行通信。通过这三种模式，View就可以向Controller通信, Action/Target 模式来让Controller 监听View 触发的事件。View又通过Data source和delegate进行数据获取和某些通信操作。</p>
 
 <h3 id="mvc总结">MVC总结</h3>
 
@@ -295,7 +307,7 @@
 
 <h2 id="三-mvp">(三) MVP</h2>
 
-<p><img src="http://img.blog.csdn.net/20160727185010580" alt="" /></p>
+<p><img src="https://raw.githubusercontent.com/OComme/OComme.github.io/master/Assets/Basic%20architecture/image3.png" alt="" /></p>
 
 <p>这看起来不正是苹果所提出的MVC方案吗？</p>
 
@@ -353,7 +365,7 @@
 
 <p>但是，这并不代表MVVM中不需要Controller，MMVC和MVVM他们之间的关系应该是这样：</p>
 
-<p><img src="http://img.blog.csdn.net/20160727185706979" alt="" /></p>
+<p><img src="https://raw.githubusercontent.com/OComme/OComme.github.io/master/Assets/Basic%20architecture/image4.gif" alt="" /></p>
 
 <p><code>View &lt;-&gt; C &lt;-&gt; ViewModel &lt;-&gt; Model</code></p>
 
@@ -377,7 +389,7 @@
 
 <h3 id="mvvm如何分工">MVVM如何分工</h3>
 
-<p><img src="http://img.blog.csdn.net/20160727185526039" alt="" /></p>
+<p><img src="https://raw.githubusercontent.com/OComme/OComme.github.io/master/Assets/Basic%20architecture/image5.png" alt="" /></p>
 
 <p>其实你可以发现MVVM 与 MVP在业务逻辑上非常相似.一般情况下安卓用MVP要多一些, iOS用MVVM要多一些.</p>
 
@@ -436,7 +448,7 @@
 
 <p>VIPER是第一个通过路由器实现明确的地址导航模式。</p>
 
-<p><img src="http://img.blog.csdn.net/20160727192110231" alt="" /></p>
+<p><img src="https://raw.githubusercontent.com/OComme/OComme.github.io/master/Assets/Basic%20architecture/image6.png" alt="" /></p>
 
 <ul>
 <li>视图（View）：根据展示器的要求显示界面，并将用户输入反馈给展示器。</li>
@@ -566,11 +578,56 @@
 
 <p>这样就可以达到项目思路清晰, 易于测试, 易用性高, 维护成本低等要求了。</p>
 
+<h1 id="我的架构思路演化">我的架构思路演化</h1>
+
+<p>最初的时候，也是从MVC开始。</p>
+
+<p>对与MVC的理解还很粗略：</p>
+
+<p>M：存储数据，提供数据
+V ：显示界面元素
+C ：管理View Container的生命周期，负责生成所有的View实例，处理所有的业务。</p>
+
+<p>开始开发正式的项目，便越发觉得这样的架构耦合性太高，不止开发起来很不满意，后续的维护也是异常艰难。</p>
+
+<p>于是一遍遍的进行优化尝试，对于MVC也有了更多理解：</p>
+
+<p>V ：显示界面元素，处理关于当前View的业务。
+C ：管理View Container的生命周期，负责生成所有的View实例，处理View层处理不了的业务。</p>
+
+<p>后面慢慢的又开始纠结与胖Model与瘦Model的取舍，思考如何才能将Model层优化到自己想要的，保持其使用的便利性和可拓展性。</p>
+
+<p>尝试着使用Model层的包装以求达到两全其美，但也总感觉这样做法在某些时候有点多余。</p>
+
+<p>在了解MVVM的基本原理及开始RAC的使用后，也开始将MVC定向的朝MVVM的方向进化。</p>
+
+<p>此时：</p>
+
+<p>M   ：存储数据，提供数据
+V    ：显示界面元素，处理关于当前View的业务。
+C    ：管理View Container的生命周期，处理有限的业务。
+VM：数据请求，数据处理，业务逻辑。</p>
+
+<p>再后来，开始了解其它仍未了解过的框架，基于多种框架的原理，开始优化使用中的MVVM：</p>
+
+<p>C    ：管理View Container的生命周期，其它方面弱化为View。
+VM：数据请求，数据处理，业务逻辑，包含为显示做的准备工作的相关视图（tableView、collectionView代理）逻辑。</p>
+
+<p>依据VIPER，在VM层内部将其业务剥离为：</p>
+
+<p>Interactor：处理业务逻辑。
+Presenter ：为显示（从交互器接受的内容）做的准备工作的相关视图逻辑。
+Entity       ：包含交互器要使用的基本模型对象。</p>
+
+<p>架构存在于程序开发的始终，需要不断优化更新。</p>
+
 <p><span style='color:red;font-Size:30px'>未完待续</span></p>
 
 <p>References:</p>
 
 <p><a href="https://casatwy.com/iosying-yong-jia-gou-tan-kai-pian.html">iOS应用架构谈 开篇</a></p>
+
+<p><a href="http://blog.csdn.net/wangyanchang21/article/details/52050102">iOS架构模式(MVC/MVCS/MVP/MVVM/VIPER) </a></p>
 
                 </section>
             </article>
