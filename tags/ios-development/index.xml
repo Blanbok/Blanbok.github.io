@@ -12,18 +12,6 @@
     
     
     <item>
-<<<<<<< HEAD
-=======
-      <title>Apple Basic architecture</title>
-      <link>https://ocomme.github.io/post/ios-development/apple-basic-architecture/</link>
-      <pubDate>Fri, 22 Sep 2017 09:00:32 +0800</pubDate>
-      
-      <guid>https://ocomme.github.io/post/ios-development/apple-basic-architecture/</guid>
-      <description>关于架构 架构，又名软件架构，是有关软件整体结构与组件的抽象描述，用于指导大型软件系统各个方面的设计。 (一) 基本概念 软件架构（software</description>
-    </item>
-    
-    <item>
->>>>>>> 1aa514e786c07ea58e746fd66a76ec257b7bc972
       <title>Objective-c Coding Standard</title>
       <link>https://ocomme.github.io/post/ios-development/objective-c-coding-standard/</link>
       <pubDate>Sat, 12 Aug 2017 17:33:23 +0800</pubDate>
