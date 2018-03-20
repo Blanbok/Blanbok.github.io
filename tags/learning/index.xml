@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Learning on OComme&#39;s blog</title>
+    <link>https://ocomme.github.io/tags/learning/</link>
+    <description>Recent content in Learning on OComme&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 20 Mar 2018 15:01:23 +0800</lastBuildDate>
+    
+	<atom:link href="https://ocomme.github.io/tags/learning/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Learning method</title>
+      <link>https://ocomme.github.io/post/learn/learning-method/</link>
+      <pubDate>Tue, 20 Mar 2018 15:01:23 +0800</pubDate>
+      
+      <guid>https://ocomme.github.io/post/learn/learning-method/</guid>
+      <description>关于学习方法的记录 [TOC] 关于学习 学习作为一种获取知识交流情感的方式，已经成为人们日常生活中不可缺少的一项重要的内容，尤其是在二十一世纪这个知识经</description>
+    </item>
+    
+  </channel>
+</rss>
